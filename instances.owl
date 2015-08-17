@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY tooli "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+  <!ENTITY dc "http://purl.org/dc/terms/">
+  <!ENTITY time "http://www.w3.org/2006/time#">
+  <!ENTITY twi "http://tw.rpi.edu/instances/">
+  <!ENTITY tw "http://tw.rpi.edu/schema/">
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="&toolmatch;"
+    xmlns:toolmatch="&toolmatch;"
+    xmlns:tooli="&tooli;"
+    xmlns:time="&time;"
+    xmlns:foaf="&foaf;"
+    xmlns:dc="&dc;"
+    xmlns:tw="&tw;"
+    xmlns:twi="&twi;"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="&toolmatch;">
+  <!--
+  <owl:Class rdf:about="Tool">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <Tool rdf:about="&tooli;ArcGIS"/>
+          <Tool rdf:about="&tooli;Ferret"/>
+          <Tool rdf:about="&tooli;GrADS"/>
+          <Tool rdf:about="&tooli;HDFView"/>
+          <Tool rdf:about="&tooli;IDV"/>
+          <Tool rdf:about="&tooli;McIDAS-V"/>
+          <Tool rdf:about="&tooli;nco"/>
+          <Tool rdf:about="&tooli;Panoply"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  -->
+  <owl:Class rdf:about="&toolmatch;DataServer">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <toolmatch:DataServer rdf:about="&tooli;erddap"/>
+          <toolmatch:DataServer rdf:about="&tooli;GrADSDataserver"/>
+          <toolmatch:DataServer rdf:about="&tooli;OPeNDAP"/>
+          <toolmatch:DataServer rdf:about="&tooli;pydap"/>
+          <toolmatch:DataServer rdf:about="&tooli;ThreddsDataServer"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="DataConvention">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataConvention rdf:about="&tooli;ClimateForecast_CF"/>
+          <DataConvention rdf:about="&tooli;CMOR_compatible"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="DataGridType">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataGridType rdf:about="&tooli;RegularLatLonGrid"/>
+          <DataGridType rdf:about="&tooli;AuxiliaryLatLonGrid"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="DataAccessProtocol">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataAccessProtocol rdf:about="&tooli;DAP"/>
+          <DataAccessProtocol rdf:about="&tooli;NetCDF-THREDDS"/>
+          <DataAccessProtocol rdf:about="&tooli;WMS"/>
+          <DataAccessProtocol rdf:about="&tooli;WCS"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="VisualizeType">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <VisualizeType rdf:about="&tooli;VectorMapping"/>
+          <VisualizeType rdf:about="&tooli;RasterMapping"/>
+          <VisualizeType rdf:about="&tooli;RasterGridding"/>
+          <VisualizeType rdf:about="&tooli;VectorGridding"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="&toolmatch;Tool"/>
+  </owl:Class>
+  <owl:Class rdf:about="ToolType">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <ToolType rdf:about="&tooli;DesktopTool"/>
+          <ToolType rdf:about="&tooli;WebBasedTool"/>
+          <ToolType rdf:about="&tooli;DataServerTool"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="&toolmatch;Tool"/>
+  </owl:Class>
+  <owl:Class rdf:about="DataFormat">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <DataFormat rdf:about="&tooli;GRIB"/>
+          <DataFormat rdf:about="&tooli;HDF4"/>
+          <DataFormat rdf:about="&tooli;HDF5"/>
+          <DataFormat rdf:about="&tooli;HDF-EOS2"/>
+          <DataFormat rdf:about="&tooli;HDF-EOS5"/>
+          <DataFormat rdf:about="&tooli;NetCDF3"/>
+          <DataFormat rdf:about="&tooli;NetCDF4Classic"/>
+          <DataFormat rdf:about="&tooli;NetCDF4Enhanced"/>
+          <DataFormat rdf:about="&tooli;GeoTIFF"/>
+          <DataFormat rdf:about="&tooli;KML"/>
+          <DataFormat rdf:about="&tooli;DAP"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+</rdf:RDF>

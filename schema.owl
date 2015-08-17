@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
+  <!ENTITY dc "http://purl.org/dc/terms/">
+  <!ENTITY time "http://www.w3.org/2006/time#">
+  <!ENTITY twi "http://tw.rpi.edu/instances/">
+  <!ENTITY tw "http://tw.rpi.edu/schema/">
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="&toolmatch;"
+    xmlns:time="&time;"
+    xmlns:foaf="&foaf;"
+    xmlns:dc="&dc;"
+    xmlns:tw="&tw;"
+    xmlns:twi="&twi;"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="&toolmatch;">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="&time;"/>
+    <owl:imports rdf:resource="&foaf;"/>
+    <rdfs:label xml:lang="en">ToolMatch Ontology and Rules</rdfs:label>
+    <rdfs:comment xml:lang="en">
+	ToolMatch is an ontology and set of rules that can help researchers
+	determine what tools can be used given a particular set of data, or
+	find data that can be used within a tool.
+    </rdfs:comment>
+    <dc:creator rdf:resource="&twi;EricRozell"/>
+    <dc:contributor rdf:resource="&twi;PatrickWest"/>
+    <dc:contributor rdf:resource="&twi;person/MatthewFerritto"/>
+    <dc:contributor rdf:resource="&twi;person/NancyHoebelheinrich"/>
+    <dc:contributor rdf:resource="&twi;Christopher_Lynnes"/>
+    <dc:publisher rdf:resource="&twi;ESIPFederation"/>
+    <dc:date>2014-07-01</dc:date>
+    <dc:rights xml:lang="en">This ontology is distributed under a Creative Commons Attribution License http://creativecommons.org/licenses/by/3.0/</dc:rights>
+    <owl:versionInfo>v 1.0 $Revision: 9878 $ $Author: pwest $ $Date: 2014-07-03 23:14:15 -0400 (Thu, 03 Jul 2014) $</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Tool">
+	<rdfs:label xml:lang="en">Tool</rdfs:label>
+	<rdfs:comment xml:lang="en">A ToolMatch Tool is a computer-based utility that can be used for data access, manipulation, and visualization.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DataServer">
+	<rdfs:label xml:lang="en">Data Server</rdfs:label>
+	<rdfs:comment xml:lang="en">A ToolMatch Data Server is a piece of software that can access, manipulate, and return data products derived from datasets, including the datasets themselves</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DataConvention">
+	<rdfs:label xml:lang="en">Data Convention</rdfs:label>
+	<rdfs:comment xml:lang="en">A Data Convention is an established technique or practice related to the representation of data in data collections.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="URL"/>
+  <owl:Class rdf:ID="DataGridType">
+	<rdfs:label xml:lang="en">Data Grid Type</rdfs:label>
+	<rdfs:comment xml:lang="en">Gridded data (or raster data) are the result of converting scattered individual data points from one or more sources into a regular "grid" (or "raster") of calculated values based on spacial parameters</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="&toolmatch;DataConvention"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DataAccessProtocol">
+	<rdfs:label xml:lang="en">Data Access Protocol</rdfs:label>
+	<rdfs:comment xml:lang="en">A standard set of regulations and requirements governing the access of data electronically</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ToolType">
+	<rdfs:label xml:lang="en">Tool Type</rdfs:label>
+	<rdfs:comment xml:lang="en">The method in which a tool can be used, such as as a desktop app, browser app, web service, etc...</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DataFormat">
+	<rdfs:label xml:lang="en">Data Format</rdfs:label>
+	<rdfs:comment xml:lang="en">The organization of information according to preset specifications for the storage of data</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DataCollection">
+	<rdfs:label xml:lang="en">Data Collection</rdfs:label>
+	<rdfs:comment xml:lang="en">A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasInputFormat">
+	<rdfs:label xml:lang="en">Has Input Format</rdfs:label>
+	<rdfs:comment xml:lang="en">A tool can input or import data products
+	that are of a particular format, such as netcdf4, hdf5</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;DataFormat"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="providesAccess">
+	<rdfs:label xml:lang="en">Provides Access</rdfs:label>
+	<rdfs:comment xml:lang="en">A Data Server can provide access to data
+	and information using a particular protocol</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;DataServer"/>
+    <rdfs:range rdf:resource="&toolmatch;DataAccessProtocol"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="usesConvention">
+	<rdfs:label xml:lang="en">Uses Convention</rdfs:label>
+	<rdfs:comment xml:lang="en">A data collection follows a particular
+	set of agreed upon rules in its representation and metadata</rdfs:comment>
+    <rdfs:range rdf:resource="&toolmatch;DataConvention"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasAccessURL">
+	<rdfs:label xml:lang="en">Has Access URL</rdfs:label>
+	<rdfs:comment xml:lang="en">A data collection can be accessed via a
+	particular URL</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+    <rdfs:range rdf:resource="&toolmatch;URL"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOutputFormat">
+	<rdfs:label xml:lang="en">Has Output Format</rdfs:label>
+	<rdfs:comment xml:lang="en">A tool can output data products in a
+	particular format, such as jpg, json, netcdf4</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;DataFormat"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isAccessedBy">
+	<rdfs:label xml:lang="en">Is Accessed By</rdfs:label>
+	<rdfs:comment xml:lang="en">A Data Collection can be accessed by a
+	particular Server</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+    <rdfs:range rdf:resource="&toolmatch;DataServer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDataFormat">
+	<rdfs:label xml:lang="en">Has Data Format</rdfs:label>
+	<rdfs:comment xml:lang="en">A Data Collection is stored in a
+	particular data format, such as hdf5, netcdf</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+    <rdfs:range rdf:resource="&toolmatch;DataFormat"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="visualizedBy">
+	<rdfs:label xml:lang="en">Visualized By</rdfs:label>
+	<rdfs:comment xml:lang="en">A Data Collection can be visuzlied by a
+	particular tool</rdfs:comment>
+    <rdfs:range rdf:resource="&toolmatch;Tool"/>
+    <rdfs:domain rdf:resource="&toolmatch;DataCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasCapability">
+	<rdfs:label xml:lang="en">Has Capability</rdfs:label>
+	<rdfs:comment xml:lang="en">Specifies the different facilities
+	available through the tool for visualizing data
+	products</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;VisualizeType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isOfType">
+	<rdfs:label xml:lang="en">Is Of Type</rdfs:label>
+	<rdfs:comment xml:lang="en">The tool can be a desktop app, browser
+	app, web service, etc...</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;ToolType"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="canUseAccessProtocol">
+	<rdfs:label xml:lang="en">Can Use Data Access Protocol</rdfs:label>
+	<rdfs:comment xml:lang="en">Specifies the access protocols that the
+	tool can use to access data</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;DataAccessProtocol"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="canUseDataServer">
+	<rdfs:label xml:lang="en">Can Use Data Server</rdfs:label>
+	<rdfs:comment xml:lang="en">Specifies the type of data servers that
+	the tool can interract with</rdfs:comment>
+    <rdfs:domain rdf:resource="&toolmatch;Tool"/>
+    <rdfs:range rdf:resource="&toolmatch;DataServer"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
