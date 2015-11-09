@@ -1,0 +1,1217 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dc "http://purl.org/dc/terms/" >
+    <!ENTITY tw "http://tw.rpi.edu/schema/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY twi "http://tw.rpi.edu/instances/" >
+    <!ENTITY time "http://www.w3.org/2006/time#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://toolmatch.esipfed.org/schema#"
+     xml:base="http://toolmatch.esipfed.org/schema"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:tw="http://tw.rpi.edu/schema/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:twi="http://tw.rpi.edu/instances/">
+    <owl:Ontology rdf:about="http://toolmatch.esipfed.org/schema">
+        <rdfs:label xml:lang="en">ToolMatch Ontology and Rules</rdfs:label>
+        <rdfs:comment xml:lang="en">
+	ToolMatch is an ontology and set of rules that can help researchers
+	determine what tools can be used given a particular set of data, or
+	find data that can be used within a tool.
+    </rdfs:comment>
+        <dc:date>2014-07-01</dc:date>
+        <dc:rights xml:lang="en">This ontology is distributed under a Creative Commons Attribution License http://creativecommons.org/licenses/by/3.0/</dc:rights>
+        <owl:versionInfo>v 1.0 $Revision: 9878 $ $Author: pwest $ $Date: 2014-07-03 23:14:15 -0400 (Thu, 03 Jul 2014) $</owl:versionInfo>
+        <dc:contributor rdf:resource="&twi;Christopher_Lynnes"/>
+        <dc:publisher rdf:resource="&twi;ESIPFederation"/>
+        <dc:creator rdf:resource="&twi;EricRozell"/>
+        <dc:contributor rdf:resource="&twi;PatrickWest"/>
+        <dc:contributor rdf:resource="&twi;person/MatthewFerritto"/>
+        <dc:contributor rdf:resource="&twi;person/NancyHoebelheinrich"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#canUseAccessProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#canUseAccessProtocol">
+        <rdfs:label xml:lang="en">Can Use Data Access Protocol</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the access protocols that the
+	tool can use to access data</rdfs:comment>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#canUseDataServer -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#canUseDataServer">
+        <rdfs:label xml:lang="en">Can Use Data Server</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the type of data servers that
+	the tool can interract with</rdfs:comment>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasAccessURL -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasAccessURL">
+        <rdfs:label xml:lang="en">Has Access URL</rdfs:label>
+        <rdfs:comment xml:lang="en">A data collection can be accessed via a
+	particular URL</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#URL"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasCapability">
+        <rdfs:label xml:lang="en">Has Capability</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the different facilities
+	available through the tool for visualizing data
+	products</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#VisualizeType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasDIF -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasDIF">
+        <rdfs:comment xml:lang="en">GCMD DIF</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasDataFormat -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasDataFormat">
+        <rdfs:label xml:lang="en">Has Data Format</rdfs:label>
+        <rdfs:comment xml:lang="en">A Data Collection is stored in a
+	particular data format, such as hdf5, netcdf</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasIdentifier">
+        <rdfs:comment>Data Collection Identifier</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasInputFormat -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasInputFormat">
+        <rdfs:label xml:lang="en">Has Input Format</rdfs:label>
+        <rdfs:comment xml:lang="en">A tool can input or import data products
+	that are of a particular format, such as netcdf4, hdf5</rdfs:comment>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#hasOutputFormat -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#hasOutputFormat">
+        <rdfs:label xml:lang="en">Has Output Format</rdfs:label>
+        <rdfs:comment xml:lang="en">A tool can output data products in a
+	particular format, such as jpg, json, netcdf4</rdfs:comment>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#isAccessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#isAccessedBy">
+        <rdfs:label xml:lang="en">Is Accessed By</rdfs:label>
+        <rdfs:comment xml:lang="en">A Data Collection can be accessed by a
+	particular Server</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#isOfType -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#isOfType">
+        <rdfs:label xml:lang="en">Is Of Type</rdfs:label>
+        <rdfs:comment xml:lang="en">The tool can be a desktop app, browser
+	app, web service, etc...</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#providesAccess -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#providesAccess">
+        <rdfs:label xml:lang="en">Provides Access</rdfs:label>
+        <rdfs:comment xml:lang="en">A Data Server can provide access to data
+	and information using a particular protocol</rdfs:comment>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#usesConvention -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#usesConvention">
+        <rdfs:label xml:lang="en">Uses Convention</rdfs:label>
+        <rdfs:comment xml:lang="en">A data collection follows a particular
+	set of agreed upon rules in its representation and metadata</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#DataConvention"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#visualizedAs2DGRID -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#visualizedAs2DGRID"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#visualizedAs3DGRID -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#visualizedAs3DGRID"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#visualizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://toolmatch.esipfed.org/schema#visualizedBy">
+        <rdfs:label xml:lang="en">Visualized By</rdfs:label>
+        <rdfs:comment xml:lang="en">A Data Collection can be visuzlied by a
+	particular tool</rdfs:comment>
+        <rdfs:domain rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <rdfs:range rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#ArcGIS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#ArcGIS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#GeoTIFF"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Shapefile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Shapefile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#BUFR -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#BUFR">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#CDM_File_Type -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#CDM_File_Type">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#CINRAD -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#CINRAD">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#ClimateForecast_CF -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#ClimateForecast_CF">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataConvention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DAP -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DAP">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DMSP -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DMSP">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DOI -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DOI">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasAccessURL"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DORADE -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DORADE">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataAccessProtocol -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataAccessProtocol">
+        <rdfs:label xml:lang="en">Data Access Protocol</rdfs:label>
+        <rdfs:comment xml:lang="en">A standard set of regulations and requirements governing the access of data electronically</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataCollection -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataCollection">
+        <rdfs:label xml:lang="en">Data Collection</rdfs:label>
+        <rdfs:comment xml:lang="en">A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataConvention -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataConvention">
+        <rdfs:label xml:lang="en">Data Convention</rdfs:label>
+        <rdfs:comment xml:lang="en">A Data Convention is an established technique or practice related to the representation of data in data collections.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataFormat -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataFormat">
+        <rdfs:label xml:lang="en">Data Format</rdfs:label>
+        <rdfs:comment xml:lang="en">The organization of information according to preset specifications for the storage of data</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataGridType -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataGridType">
+        <rdfs:label xml:lang="en">Data Grid Type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataConvention"/>
+        <rdfs:comment xml:lang="en">Gridded data (or raster data) are the result of converting scattered individual data points from one or more sources into a regular &quot;grid&quot; (or &quot;raster&quot;) of calculated values based on spacial parameters</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DataServer -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataServer">
+        <rdfs:label xml:lang="en">Data Server</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DAP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A ToolMatch Data Server is a piece of software that can access, manipulate, and return data products derived from datasets, including the datasets themselves</rdfs:comment>
+        <rdfs:comment>Data Server</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#DesktopEnvironment -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DesktopEnvironment">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
+        <rdfs:comment>Desktop Environment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#ERRDAP -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#ERRDAP">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#F-TDS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#F-TDS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#FYSAT -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#FYSAT">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Ferrett -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Ferrett">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GCMDDIFEntry -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GCMDDIFEntry">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Identifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasAccessURL"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#URL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GINI -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GINI">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GRIB -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GRIB">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GRIB-1 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GRIB-1">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#GRIB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GRIB-2 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GRIB-2">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#GRIB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GTOPO -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GTOPO">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Gempak_Grid -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Gempak_Grid">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Gempak_Surface -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Gempak_Surface">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GeoTIFF -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GeoTIFF">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Giovanni -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Giovanni">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#WebBasedEnvironment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GoogleEarth -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GoogleEarth">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#WebBasedEnvironment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KMZ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KMZ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Google Earth</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GrADS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#GrADS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDF">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF-EOS2 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDF-EOS2">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF-EOSS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDF-EOSS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF4 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDF4">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF5 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDF5">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDFView -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HDFView">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Hyrax -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Hyrax">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF3"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF5"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#IDV -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#IDV">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Identifier -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Identifier"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#KML -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#KML">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+        <rdfs:comment>Keyhole Markup Language</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#KMZ -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#KMZ">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+        <rdfs:comment xml:lang="en">compressed KML</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#LiveAccessServer -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#LiveAccessServer">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#McIDAS-V -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#McIDAS-V">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#McIDASArea -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#McIDASArea">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#McIDASGrid -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#McIDASGrid">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NEXRAD-2 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NEXRAD-2">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NEXRAD-3 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NEXRAD-3">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NLDN -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NLDN">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NMCon29 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NMCon29">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF-THREDDS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF-THREDDS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF3 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF3">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4 -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4Classic -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4Classic">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4Enhanced -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4Enhanced">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#OPeNDAP -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#OPeNDAP">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Panoply -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Panoply">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF5"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KMZ"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#SIGMET -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#SIGMET">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Shapefile -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Shapefile">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#TDS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#TDS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+        <rdfs:comment>Thredds Data Server</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Tool -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Tool">
+        <rdfs:label xml:lang="en">Tool</rdfs:label>
+        <rdfs:comment xml:lang="en">A ToolMatch Tool is a computer-based utility that can be used for data access, manipulation, and visualization.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#ToolEnvironment -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#ToolEnvironment">
+        <rdfs:label xml:lang="en">Tool Environment</rdfs:label>
+        <rdfs:comment xml:lang="en">The method in which a tool can be used, such as as a desktop app, browser app, web service, etc...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#UAMIV -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#UAMIV">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#URL -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#URL"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#USPLM -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#USPLM">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Universal_Radar_Format -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#Universal_Radar_Format">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#CDM_File_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#VisualizeType -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#VisualizeType"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#WCS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#WCS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#WMS -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#WMS">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#WebBasedEnvironment -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#WebBasedEnvironment">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
+        <rdfs:comment>Web-based environment
+</rdfs:comment>
+        <rdfs:comment xml:lang="en">runs in browser</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#nco -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#nco">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#pydap -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#pydap">
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DataServer"/>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html -->
+
+    <owl:NamedIndividual rdf:about="http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#URL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dx.doi.org/10.5067/aqua/airs/data202 -->
+
+    <owl:NamedIndividual rdf:about="http://dx.doi.org/10.5067/aqua/airs/data202">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#Identifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#AIRS_Aqua_Level_3_Monthly_CO2_in_the_free_troposphere_V005_at_GES_DISC -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#AIRS_Aqua_Level_3_Monthly_CO2_in_the_free_troposphere_V005_at_GES_DISC">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+        <hasAccessURL rdf:resource="http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html"/>
+        <hasIdentifier rdf:resource="http://dx.doi.org/10.5067/aqua/airs/data202"/>
+        <usesConvention rdf:resource="http://toolmatch.esipfed.org/schema#ClimateForecast_CF"/>
+        <hasDIF rdf:resource="http://toolmatch.esipfed.org/schema#GES_DISC_AIRS2RET_V006"/>
+        <hasDataFormat rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Aquarius_Level_3_Sea_Surface_Salinity_Standard_Mapped_Image_Monthly_Data_V3.0 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Aquarius_Level_3_Sea_Surface_Salinity_Standard_Mapped_Image_Monthly_Data_V3.0">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#ClimateForecast_CF -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#ClimateForecast_CF"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Cross-Calibrated_Multi-Platform_Ocean_Surface_Wind_Vector_L3.0_First-Look_Analyses -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Cross-Calibrated_Multi-Platform_Ocean_Surface_Wind_Vector_L3.0_First-Look_Analyses">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Daily_TRMM_and_Others_Rainfall_Estimate__3B42_V7_derived -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Daily_TRMM_and_Others_Rainfall_Estimate__3B42_V7_derived">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GES_DISC_AIRS2RET_V006 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#GES_DISC_AIRS2RET_V006">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#GCMDDIFEntry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_at_GES_DISC -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_at_GES_DISC">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF-EOS2 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF-EOS5 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#HDF-EOS5"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF4 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#HDF4"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#HDF5 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#HDF5"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#KML -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#KML"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#MERRA_3D_IAU_Tendency,_Temperature,_Monthly_Mean_V5.2.0 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#MERRA_3D_IAU_Tendency,_Temperature,_Monthly_Mean_V5.2.0">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#MISR_Level_3_Daily_Component_Global_Aerosol_Product_V004 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#MISR_Level_3_Daily_Component_Global_Aerosol_Product_V004">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#MODIS_Aqua_Aerosol_Cloud_Water_Vapor_Ozone_Daily_L3_Global_1Deg_CMG -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#MODIS_Aqua_Aerosol_Cloud_Water_Vapor_Ozone_Daily_L3_Global_1Deg_CMG">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NOAA_Coral_Reef_Watch_Operational_Twice-Weekly_Near-Real-Time_Global_50-km_Satellite_Coral_Bleaching_HotSpots_Product -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#NOAA_Coral_Reef_Watch_Operational_Twice-Weekly_Near-Real-Time_Global_50-km_Satellite_Coral_Bleaching_HotSpots_Product">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF3 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#NetCDF3"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4Classic -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4Classic"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#NetCDF4Enhanced -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#NetCDF4Enhanced"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#OMI_Aura_Sulphur_Dioxide_Total_Column_1-orbit_L2_Swath_13x24_km_V003 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#OMI_Aura_Sulphur_Dioxide_Total_Column_1-orbit_L2_Swath_13x24_km_V003">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#SeaWiFS_Deep_Blue_Aerosol_Optical_Depth_and_Angstrom_Exponent_Daily_Level_3_Data_Gridded_at_0.5_Degrees_V004 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#SeaWiFS_Deep_Blue_Aerosol_Optical_Depth_and_Angstrom_Exponent_Daily_Level_3_Data_Gridded_at_0.5_Degrees_V004">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Sea_Level_Rise_Projectsion_for_DSL-SAMBI -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Sea_Level_Rise_Projectsion_for_DSL-SAMBI">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#Shapefile -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#Shapefile"/>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#TOMS_Earth-Probe_Total_Ozone_Aerosol_Index_UV-Reflectivity_UV-B_Erythemal_Irradiances_Daily_L3_Global_1x1.25_deg_V008 -->
+
+    <owl:NamedIndividual rdf:about="http://toolmatch.esipfed.org/schema#TOMS_Earth-Probe_Total_Ozone_Aerosol_Index_UV-Reflectivity_UV-B_Erythemal_Irradiances_Daily_L3_Global_1x1.25_deg_V008">
+        <rdf:type rdf:resource="http://toolmatch.esipfed.org/schema#DataCollection"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
