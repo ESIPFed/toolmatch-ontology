@@ -2149,12 +2149,19 @@ Date: 2015-11-26</owl:versionInfo>
     </owl:Class>
     
 
+    <!-- http://toolmatch.esipfed.org/schema#htmlTable -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#htmlTable">
+        <rdfs:label xml:lang="en">Ferret's htmlTable output</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#VisualizationType"/>
+    </owl:Class>
+
 
     <!-- http://toolmatch.esipfed.org/schema#VisualizationType -->
 
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#VisualizationType">
         <rdfs:label xml:lang="en">Visualization Type</rdfs:label>
-        <rdfs:comment xml:lang="en">htmlTable, from visualization options on DataCollection /Tools</rdfs:comment>
+        <rdfs:comment xml:lang="en">A visualization option supported by a tool</rdfs:comment>
     </owl:Class>
     
 
