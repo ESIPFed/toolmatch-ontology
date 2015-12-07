@@ -302,6 +302,14 @@ Date: 2015-11-26</owl:versionInfo>
     
 
 
+    <!-- http://toolmatch.esipfed.org/schema#hasVersionNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://toolmatch.esipfed.org/schema#hasVersionNumber">
+        <rdfs:label xml:lang="en">has Version Number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -343,12 +351,6 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Shapefile"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#GeoTIFF"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -356,6 +358,12 @@ Date: 2015-11-26</owl:versionInfo>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Shapefile"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -370,8 +378,8 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -383,25 +391,19 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#ScatterPlot"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Histogram"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -418,12 +420,6 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
             </owl:Restriction>
@@ -431,13 +427,25 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Histogram"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#ScatterPlot"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Stitch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -628,6 +636,18 @@ Date: 2015-11-26</owl:versionInfo>
 
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataAccessProtocol">
         <rdfs:label xml:lang="en">Data Access Protocol</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:description xml:lang="en">A standard set of regulations and requirements governing the access of data electronically</dc:description>
     </owl:Class>
     
@@ -637,6 +657,43 @@ Date: 2015-11-26</owl:versionInfo>
 
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataCollection">
         <rdfs:label xml:lang="en">Data Collection</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#isAccessedBy"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#visualizedBy"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasAccessURL"/>
+                <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#usesConvention"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataConvention"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasDataFormat"/>
+                <owl:onClass rdf:resource="http://toolmatch.esipfed.org/schema#DataFormat"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasIdentifier"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <dc:description xml:lang="en">A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.</dc:description>
     </owl:Class>
     
@@ -678,14 +735,14 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DAP"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#canUseAccessProtocol"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:description xml:lang="en">A ToolMatch Data Server is a piece of software that can access, manipulate, and return data products derived from datasets, including the datasets themselves</dc:description>
@@ -697,6 +754,12 @@ Date: 2015-11-26</owl:versionInfo>
 
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#DataService">
         <rdfs:label xml:lang="en">Data Service</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#canUseAccessProtocol"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataAccessProtocol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -738,13 +801,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Binary"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Binary"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -783,19 +846,19 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -806,8 +869,8 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -837,13 +900,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -866,7 +929,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -878,7 +941,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -948,14 +1011,14 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -978,12 +1041,6 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -991,6 +1048,12 @@ Date: 2015-11-26</owl:versionInfo>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1030,13 +1093,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#WebBasedEnvironment"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KML"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1064,7 +1127,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1082,7 +1145,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1153,14 +1216,14 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1172,12 +1235,6 @@ Date: 2015-11-26</owl:versionInfo>
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#HEG">
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#DesktopEnvironment"/>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
@@ -1192,20 +1249,26 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Subset"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1267,6 +1330,12 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#NetCDF4"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1279,13 +1348,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOSS"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1297,7 +1360,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1312,6 +1375,12 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
@@ -1319,13 +1388,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#ScatterPlot"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1337,13 +1400,7 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#ScatterPlot"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1355,7 +1412,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1416,14 +1479,14 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1460,8 +1523,8 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1472,8 +1535,8 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1487,8 +1550,8 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1499,8 +1562,8 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1686,13 +1749,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Binary"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Binary"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#canUseAccessProtocol"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DAP"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1703,8 +1766,8 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#canUseAccessProtocol"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DAP"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1748,13 +1811,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KMZ"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1771,20 +1834,8 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF5"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Hovmoller"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1795,8 +1846,14 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF5"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1807,8 +1864,14 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasOutputFormat"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#KMZ"/>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasInputFormat"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#HDF4"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1829,13 +1892,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1850,25 +1913,25 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Histogram"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2033,20 +2096,14 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:label xml:lang="en">Tool</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasVersionNumber"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VisualizationType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VisualizationType"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasAccessURL"/>
-                <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2057,8 +2114,20 @@ Date: 2015-11-26</owl:versionInfo>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasAccessURL"/>
+                <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#DataType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#hasCapability"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VisualizationType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:description xml:lang="en">A ToolMatch Tool is a computer-based utility that can be used for data access, manipulation, and visualization.</dc:description>
@@ -2114,19 +2183,13 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Histogram"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2138,13 +2201,19 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Histogram"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#TimeSeries"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#AnimatedMap"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#VerticalProfile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Grid"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2200,7 +2269,22 @@ Date: 2015-11-26</owl:versionInfo>
     <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#WebBasedEnvironment">
         <rdfs:label xml:lang="en">Web-based environment</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#ToolEnvironment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#isAccessedBy"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#WebBrowser"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">runs in browser</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://toolmatch.esipfed.org/schema#WebBrowser -->
+
+    <owl:Class rdf:about="http://toolmatch.esipfed.org/schema#WebBrowser">
+        <rdfs:label xml:lang="en">Web Browser</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
     </owl:Class>
     
 
@@ -2271,6 +2355,12 @@ Date: 2015-11-26</owl:versionInfo>
         <rdfs:subClassOf rdf:resource="http://toolmatch.esipfed.org/schema#Tool"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
+                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Raster"/>
             </owl:Restriction>
@@ -2279,12 +2369,6 @@ Date: 2015-11-26</owl:versionInfo>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsDataType"/>
                 <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Vector"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://toolmatch.esipfed.org/schema#supportsVisualizationType"/>
-                <owl:someValuesFrom rdf:resource="http://toolmatch.esipfed.org/schema#Map"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -2334,6 +2418,25 @@ Date: 2015-11-26</owl:versionInfo>
     <rdf:Description rdf:about="http://toolmatch.esipfed.org/schema#hasAccessURL">
         <rdfs:label xml:lang="en">Has Access URL</rdfs:label>
         <dc:description xml:lang="en">A data collection can be accessed via a particular URL.</dc:description>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://toolmatch.esipfed.org/schema#Grid"/>
+            <rdf:Description rdf:about="http://toolmatch.esipfed.org/schema#Raster"/>
+            <rdf:Description rdf:about="http://toolmatch.esipfed.org/schema#Vector"/>
+        </owl:members>
     </rdf:Description>
 </rdf:RDF>
 
