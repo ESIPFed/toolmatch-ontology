@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:Tool rdf:about="&toolmatchi;ArcGIS">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ArcGIS</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ArcGIS</dc:title>
+    <doap:homepage rdf:resource="https://www.arcgis.com/features/"/>
+    <dc:description rdf:parseType="Literal">Esri's ArcGIS is a geographic information system (GIS) for working with maps and geographic information. It is used for: creating and using maps; compiling geographic data; analyzing mapped information; sharing and discovering geographic information; using maps and geographic information in a range of applications; and managing geographic information in a database.
+The system provides an infrastructure for making maps and geographic information available throughout an organization, across a community, and openly on the Web.
+ArcGIS includes the following Windows desktop software:
+ArcReader, which allows one to view and query maps created with the other ArcGIS products;
+ArcGIS for Desktop, which is licensed under three functionality levels:
+ArcGIS for Desktop Basic (formerly known as ArcView), which allows one to view spatial data, create layered maps, and perform basic spatial analysis;
+ArcGIS for Desktop Standard (formerly known as ArcEditor), which in addition to the functionality of ArcView, includes more advanced tools for manipulation of shapefiles and geodatabases; or
+ArcGIS for Desktop Advanced (formerly known as ArcInfo), which includes capabilities for data manipulation, editing, and analysis.
+There are also server-based ArcGIS products, as well as ArcGIS products for PDAs. Extensions can be purchased separately to increase the functionality of ArcGIS.</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/ArcGIS_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&toolmatchi;ArcGIS_10.2.2">
+        <doap:revision>10.2.2</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/GeoTIFF"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF3"/>
+  </toolmatch:Tool>
+</rdf:RDF>

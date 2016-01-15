@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:gcmd="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;">
+
+      <toolmatch:DataCollection rdf:about="&toolmatchi;Aqua_AIRS_Level_2_Standard_Physical_Retrieval__AIRS_AMSU__V006__AIRX2RET__at_GES_DISC">
+      <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aqua AIRS Level 2 Standard Physical Retrieval_ AIRS only</rdfs:label>
+
+      <dcat:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aqua_AIRS_Level_2_Standard_Physical_Retrieval__AIRS_AMSU__V006__AIRX2RET__at_GES_DISC</dcat:title>
+
+      <dc:identifier rdf:parseType="Literal">10.5067/AQUA/AIRS/DATA201</dc:identifier>
+      <gcmd:Entry_ID rdf:parseType="Literal">GES_DISC_AIRX2RET_V006</gcmd:Entry_ID>
+
+      <!--<toolmatch:hasAccessURL rdf:resource="http://airsl2.gesdisc.eosdis.nasa.gov/opendap/Aqua_AIRS_Level2/AIRX2RET.006/contents.html"/>-->
+
+      <dcat:description rdf:parseType="Literal">The Atmospheric Infrared Sounder (AIRS) is a facility instrument aboard the second Earth Observing System (EOS) polar-orbiting  platform, EOS Aqua. In combination with the Advanced Microwave  Sounding Unit (AMSU) and the Humidity Sounder for Brazil (HSB), AIRS constitutes an innovative atmospheric sounding group of visible,  infrared, and microwave sensors. AIRS data will be generated continuously. Global coverage will be obtained twice daily (day and night) on a 1:30pm sun synchronous orbit from a 705-km altitude.
+
+                              The AIRS Standard Retrieval Product consists of retrieved estimates of  cloud and surface properties, plus profiles of retrieved temperature,  water vapor, ozone, carbon monoxide and methane. Estimates of the errors associated with these quantities will also be part of the Standard Product. The temperature profile vertical resolution is 28 levels total between 1100 mb and 0.1 mb, while moisture profile is reported at 14 atmospheric layers between 1100 mb and 50 mb. The horizontal resolution is 50 km. An AIRS granule has been set as 6 minutes of data, 30 footprints cross track by 45 lines along track.
+
+                              (The Shortname for this product is AIRX2RET).
+      </dcat:description>
+
+        <toolmatch:hasAccessURL rdf:resource="http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html"/>
+        <!--<toolmatch:hasIdentifier rdf:resource="http://dx.doi.org/10.5067/aqua/airs/data202"/>-->
+        <toolmatch:usesConvention rdf:resource="http://toolmatch.esipfed.org/schema#ClimateForecast_CF"/>
+        <toolmatch:hasDIF rdf:resource="http://toolmatch.esipfed.org/schema#GES_DISC_AIRS2RET_V006"/>
+        <toolmatch:hasDataFormat rdf:resource="http://toolmatch.esipfed.org/schema#HDF-EOS2"/>
+      </toolmatch:DataCollection>
+</rdf:RDF>

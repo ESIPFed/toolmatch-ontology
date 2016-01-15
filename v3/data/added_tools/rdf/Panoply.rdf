@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:Tool rdf:about="&toolmatchi;Panoply">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panoply</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panoply</dc:title>
+    <doap:homepage rdf:resource="http://www.giss.nasa.gov/tools/panoply/"/>
+    <dc:description rdf:parseType="Literal">Panoply is a cross-platform application that plots geo-gridded and other arrays from netCDF, HDF, GRIB, and other datasets. With Panoply 4 you can:
+
+Panoply icon
+Slice and plot geo-gridded latitude-longitude, latitude-vertical, longitude-vertical, or time-latitude arrays from larger multidimensional variables.
+Slice and plot "generic" 2D arrays from larger multidimensional variables.
+Slice 1D arrays from larger multidimensional variables and create line plots.
+Combine two geo-gridded arrays in one plot by differencing, summing or averaging.
+Plot lon-lat data on a global or regional map using any of over 100 map projections or make a zonal average line plot.
+Overlay continent outlines or masks on lon-lat map plots.
+Use any of numerous color tables for the scale colorbar, or apply your own custom ACT, CPT, or RGB color table.
+Save plots to disk GIF, JPEG, PNG or TIFF bitmap images or as PDF or PostScript graphics files.
+Export lon-lat map plots in KMZ format.
+Export animations as AVI or MOV video or as a collection of invididual frame images.
+Explore remote THREDDS and OpenDAP catalogs and open datasets served from them.</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/Panoply_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&toolmatchi;Panoply_4.0.3">
+        <doap:revision>4.0.3</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/DAP"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/GRIB"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF4"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF5"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF3"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF4Classic"/>
+    <toolmatch:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/KML"/>
+  </toolmatch:Tool>
+</rdf:RDF>

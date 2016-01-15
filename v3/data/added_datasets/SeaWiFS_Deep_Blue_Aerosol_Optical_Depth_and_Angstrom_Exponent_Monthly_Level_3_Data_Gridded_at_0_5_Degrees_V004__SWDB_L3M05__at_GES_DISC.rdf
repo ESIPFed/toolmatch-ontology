@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:gcmd="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:DataCollection rdf:about="&toolmatchi;SeaWiFS_Deep_Blue_Aerosol_Optical_Depth_and_Angstrom_Exponent_Monthly_Level_3_Data_Gridded_at_0_5_Degrees_V004__SWDB_L3M05__at_GES_DISC">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaWiFS_Deep_Blue_Aerosol_Optical_Depth_and_Angstrom_Exponent_Monthly_Level_3_Data_Gridded_at_0_5_Degrees_V004__SWDB_L3M05__at_GES_DISC</rdfs:label>
+  <dcat:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeaWiFS_Deep_Blue_Aerosol_Optical_Depth_and_Angstrom_Exponent_Monthly_Level_3_Data_Gridded_at_0_5_Degrees_V004__SWDB_L3M05__at_GES_DISC</dcat:title>
+			<dc:identifier rdf:parseType="Literal">NEED TO FILL IN</dc:identifier>
+			<gcmd:Entry_ID rdf:parseType="Literal">NEED TO FILL IN</gcmd:Entry_ID>
+			<toolmatch:hasAccessURL rdf:resource="NEED TO FILL IN"/>
+			<dcat:description rdf:parseType="Literal">The SeaWiFS Deep Blue Level 3 Monthly Product contains monthly global gridded (0.5 x 0.5 deg) data derived from SeaWiFS Deep Blue Level 3 daily gridded data. The primary data parameters are aerosol optical thickness, Angstrom exponent, and single scattering albedo. (The Shortname for this product is SWDB_L3M05). Parameters contained in the SeaWiFS Deep Blue (SWDB) data files include the following: aerosol_optical_thickness_550_land | aerosol optical thickness estimated at 550 nm over land | (unitless) aerosol_optical_thickness_550_land_ocean | aerosol optical thickness estimated at 550 nm over land and ocean | (unitless) aerosol_optical_thickness_550_ocean | aerosol optical thickness estimated at 550 nm over ocean | (unitless) aerosol_optical_thickness_land | aerosol optical thickness at 412 nm, 490 nm, and 670 nm over land | (unitless) aerosol_optical_thickness_ocean | aerosol optical thickness at 412 nm, 490 nm, and 670 nm over ocean | (unitless) angstrom_exponent_land | angstrom exponent over land as derived from aerosol optical thickness at 412 nm and 490 nm | (unitless) angstrom_exponent_land_ocean | angstrom exponent over land and ocean as derived from aerosol optical thickness at 412 nm and 490 nm | (unitless) angstrom_exponent_ocean | angstrom exponent over ocean as derived from aerosol optical thickness at 412 nm and 490 nm | (unitless)</dcat:description>
+		</toolmatch:DataCollection>
+</rdf:RDF>

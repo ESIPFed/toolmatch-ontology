@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY tooli "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY tool "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:tool="&tool;"
+  xmlns:tooli="&tooli;"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&tool;"
+  xml:base="&tool;">
+  <tool:Tool rdf:about="&tooli;nco">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nco</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nco</dc:title>
+    <doap:homepage rdf:resource="http://nco.sourceforge.net/"/>
+    <dc:description rdf:parseType="Literal">The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats, including DAP, HDF4, and HDF5. It exploits the geophysical expressivity of many CF (Climate & Forecast) metadata conventions, the flexible description of physical dimensions translated by UDUnits, the network transparency of OPeNDAP, the storage features (e.g., compression, chunking, groups) of HDF (the Hierarchical Data Format), and many powerful mathematical and statistical algorithms of GSL (the GNU Scientific Library). NCO is fast, powerful, and free.</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/nco_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&tooli;nco_4.4.4">
+        <doap:revision>4.4.4</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/DAP"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF3"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF4Classic"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF4Enhanced"/>
+    <tool:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/KML"/>
+  </tool:Tool>
+</rdf:RDF>

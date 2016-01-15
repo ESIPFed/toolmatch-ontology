@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+		<!DOCTYPE rdf:RDF [
+		  <!ENTITY tooli "http://toolmatch.esipfed.org/instances/">
+		  <!ENTITY tool "http://toolmatch.esipfed.org/schema#">
+		  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+		  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+		]>
+		<rdf:RDF
+			xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:doap="&doap;"
+			xmlns:foaf="http://xmlns.com/foaf/0.1/"
+			xmlns:dc="http://purl.org/dc/terms/"
+			xmlns:owl="http://www.w3.org/2002/07/owl#"
+			xmlns:tool="&tool;"
+			xmlns:tooli="&tooli;"
+			xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+			xmlns="&tool;"
+			xml:base="&tool;">
+			<tool:Tool rdf:about="&tooli;grADS">
+				<rdf:type rdf:resource="&doap;Project"/>
+				<rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grADS</rdfs:label>
+				<dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grADS</dc:title>
+				<doap:homepage rdf:resource="http://www.iges.org/grads/"/>
+				<dc:description rdf:parseType="Literal">The Grid Analysis and Display System (GrADS) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data. GrADS has two data models for handling gridded and station data. GrADS supports many data file formats, including binary (stream or sequential), GRIB (version 1 and 2), NetCDF, HDF (version 4 and 5), and BUFR (for station data). GrADS has been implemented worldwide on a variety of commonly used operating systems and is freely distributed over the Internet.</dc:description>
+			<foaf:depiction>
+					  <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/grADS_logo.png"/>
+			</foaf:depiction>
+				<doap:release>
+					<doap:Version rdf:about="&tooli;grADS_2.0.2">
+					 <doap:revision>2.0.2</doap:revision>
+					</doap:Version>
+				</doap:release></tool:Tool>
+		</rdf:RDF>

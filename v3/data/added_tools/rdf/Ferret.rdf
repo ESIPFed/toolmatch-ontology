@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:Tool rdf:about="&toolmatchi;Ferret">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ferret</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ferret</dc:title>
+    <doap:homepage rdf:resource="http://ferret.pmel.noaa.gov/Ferret/"/>
+    <dc:description rdf:parseType="Literal">Ferret is an interactive computer visualization and analysis environment designed to meet the needs of oceanographers and meteorologists analyzing large and complex gridded data sets. It runs on most Unix systems, and on Windows XP/NT/9x using X windows for display. It can transparently access extensive remote Internet data sources using OPeNDAP (formerly known as DODS); see http://opendap.org and http://www.unidata.ucar.edu/publications/directorspage/UnidataOverview.html
+
+Ferret was developed by the Thermal Modeling and Analysis Project (TMAP) at PMEL in Seattle to analyze the outputs of its numerical ocean models and compare them with gridded, observational data. The model data sets are generally multi-gigabyte in size with mixed 3 and 4-dimensional variables defined on staggered grids. Ferret offers a Mathematica-like approach to analysis; new variables may be defined interactively as mathematical expressions involving data set variables. Calculations may be applied over arbitrarily shaped regions. Fully documented graphics are produced with a single command.
+
+Many excellent software packages have been developed recently for scientific visualization. The features that make Ferret distinctive among these packages are Mathematica-like flexibility, geophysical formatting, "intelligent" connection to its data base, memory management for very large calculations, and symmetrical processing in 4 dimensions.
+
+Ferret is widely used in the oceanographic community to analyze data and create publication quality graphics. We have compiled an (incomplete) list of publications where the authors felt that the contribution of Ferret was sufficient to warrant an acknowledgment. We appreciate your acknowledgment of Ferret in your publications. Here is a suggested acknowledgment that you may use.</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/Ferret_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&toolmatchi;Ferret_6.9">
+        <doap:revision>6.9</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/DAP"/>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF3"/>
+  </toolmatch:Tool>
+</rdf:RDF>

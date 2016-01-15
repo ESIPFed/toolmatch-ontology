@@ -1,0 +1,3184 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://toolmatch.esipfed.org/schema"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://toolmatch.esipfed.org/schema"
+     versionIRI="http://toolmatch.esipfed.org/schema/2.0">
+    <Prefix name="" IRI="http://toolmatch.esipfed.org/schema#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#"/>
+    <Prefix name="tw" IRI="http://tw.rpi.edu/schema/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="twi" IRI="http://tw.rpi.edu/instances/"/>
+    <Prefix name="wot" IRI="http://xmlns.com/wot/0.1/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Import>http://www.w3.org/2006/time#</Import>
+    <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ToolMatch is an ontology and set of rules that can help researchers determine what tools can be used given a particular set of data, or find data that can be used within a tool.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This ontology is distributed under a Creative Commons Attribution License http://creativecommons.org/licenses/by/3.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:publisher"/>
+        <AbbreviatedIRI>twi:ESIPFederation</AbbreviatedIRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <AbbreviatedIRI>twi:EricRozell</AbbreviatedIRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>http://tw.rpi.edu/instances/person/MatthewFerritto</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-27</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">v 2.0 
+Revision: 9878
+Date: 2015-11-26</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <IRI>http://tw.rpi.edu/instances/person/NancyHoebelheinrich</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <AbbreviatedIRI>twi:PatrickWest</AbbreviatedIRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ToolMatch Ontology and Rules</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+        <AbbreviatedIRI>twi:Christopher_Lynnes</AbbreviatedIRI>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#ArcGISonline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataServer"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3DGrid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#McIDASGrid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VISAN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#McIDASArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DOI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HDF-EOS2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#2DGrid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HDFView"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InSituData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GRIB-2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegularGrid"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAccessedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#4DGrid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASCII"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualizeData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToolEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Universal_Radar_Format"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UF_GEOIDE_LAS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataResolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HTTP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Giovanni"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GoogleEarth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ncdump"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetCDF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gemapak_Grid"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInputFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HDF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GRIB-1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DAP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hovmoller"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canUseAccessProtocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiveActionServer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TSV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TDS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataStructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horizontal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manifold"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CDAT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VerticalPlane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Histogram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ncview"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Latitude"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Text"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#URL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Swath"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UAMIV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IDV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stitch"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CoastWatch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnimatedMap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MISR_Toolkit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Panoply"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Raster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Line"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CSV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XML"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DODS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SIGMET"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataFormat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NLDN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GCMDDIFEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Matlab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MINX"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClimateForecast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArcGIS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoServer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TSVP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReformatData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mesh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HDF-EOS5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataOrientation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GeoTIFF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#primaryDataConvention"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesConvention"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ODVText"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GE_Smallworld"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:publisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canUseDataServer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NMCon29"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NetCDF4Enhanced"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServerCapability"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TSV0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HDF4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NCML"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#uDig"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DesktopEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#esriASCII"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NCO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HEG"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NetCDF4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialCoverage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SLAMM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vertical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HDF5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalResolution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GES_DISC_GLDAS_MOS10SUBP_3H_V001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/aqua/airs/data202"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FYSAT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pydap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ERRDAP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NetCDF3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vector"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDataDimension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeSeries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OSGeo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Binary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DMSP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ncBrowse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataDimension"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#visualizedAs3DGRID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CSVP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/dlvu8vopkn7l"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AccessURL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#USPLM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CDM_File_Type"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#4D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoprocessCapability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDataConvention"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArcGISServer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GrADS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NEXRAD-2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IrregularGrid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HTMLtable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CSV0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CINRAD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WCS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScatterPlot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shapefile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UniformRegularGrid"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#3D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MISR_VIEW"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataConvention"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDataFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HYDRA2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NEXRAD-3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KML"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BEAT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PointColumn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#VersionNumber"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GES_DISC_OMSO2_V003"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VerticalProfile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DChart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#2D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArcGISDesktop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataAccessProtocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GRASS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Longitude"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#visualizedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#R"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QGIS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SPSS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalCoverage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Octave"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AccessURL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JSON"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mosaic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemporalValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NCL"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebBrowser"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GTOPO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BUFR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDIF"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetCDF-THREDDS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualizationType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#accessLink"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GeoJSON"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FTP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DORADE"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WMS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SOS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LongitudeResolution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GINI"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supportsVisualizationType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gempack_Surface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Polygon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOutputFormat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GeoDa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#providesAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Point"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NetCDF4Classic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebBasedEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReST"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capability"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CMOR"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supportsDataType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hyrax"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubsetData"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ferret"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GES_DISC_AIRS2RET_V006"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GRIB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFS"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#F-TDS"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gvSIG"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PointTimeSeries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LatitudeResolution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Identifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#McIDAS-V"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#visualizedAs2DGRID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OPeNDAP"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#TemporalValue"/>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AnimatedMap"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnimatedMap"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#Longitude"/>
+            <Class IRI="#TemporalValue"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGIS"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <Class IRI="#ArcGIS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#Mosaic"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#Stitch"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#SubsetData"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#AnimatedMap"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Histogram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#ScatterPlot"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISDesktop"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VerticalProfile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISServer"/>
+        <Class IRI="#ArcGIS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISServer"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISServer"/>
+        <Class IRI="#WebBasedEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISonline"/>
+        <Class IRI="#ArcGIS"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArcGISonline"/>
+        <Class IRI="#WebBasedEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BEAT"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BEAT"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BEAT"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#SubsetData"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BEAT"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CDAT"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CDM_File_Type"/>
+        <Class IRI="#DataFormat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DAP"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DChart"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DODS"/>
+        <Class IRI="#DataService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DOI"/>
+        <Class IRI="#Identifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DOI"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#AccessURL"/>
+            <Class IRI="#URL"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataAccessProtocol"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#DataFormat"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataAccessProtocol"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasOutputFormat"/>
+            <Class IRI="#DataFormat"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIdentifier"/>
+            <Class IRI="#Identifier"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAccessedBy"/>
+            <Class IRI="#DataAccessProtocol"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#usesConvention"/>
+            <Class IRI="#DataConvention"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#visualizedBy"/>
+            <Class IRI="#Tool"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasDataFormat"/>
+            <Class IRI="#DataFormat"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCollection"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#AccessURL"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOrientation"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataResolution"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataServer"/>
+        <Class IRI="#ToolEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUseAccessProtocol"/>
+            <Class IRI="#DataAccessProtocol"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#ServerCapability"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataService"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUseAccessProtocol"/>
+            <Class IRI="#DataAccessProtocol"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesktopEnvironment"/>
+        <Class IRI="#ToolEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERRDAP"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERRDAP"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERRDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#HDF"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERRDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#NetCDF"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERRDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FTP"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#SubsetData"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Hovmoller"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ferret"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#Identifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GCMDDIFEntry"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#AccessURL"/>
+            <Class IRI="#URL"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GE_Smallworld"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GE_Smallworld"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GE_Smallworld"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <Class IRI="#OSGeo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRIB"/>
+        <Class IRI="#DataFormat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoDa"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoDa"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoDa"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoDa"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoDa"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoServer"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoServer"/>
+        <Class IRI="#OSGeo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GeoprocessCapability"/>
+        <Class IRI="#Capability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Giovanni"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Giovanni"/>
+        <Class IRI="#WebBasedEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoogleEarth"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GoogleEarth"/>
+        <Class IRI="#WebBasedEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GrADS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grid"/>
+        <Class IRI="#DataStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDF"/>
+        <Class IRI="#DataFormat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDFView"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDFView"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDFView"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#SubsetData"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDFView"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HDFView"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#Mosaic"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#Stitch"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#SubsetData"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HEG"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HTMLtable"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HTTP"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HYDRA2"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HYDRA2"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HYDRA2"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#ScatterPlot"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Histogram"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Horizontal"/>
+        <Class IRI="#DataOrientation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hovmoller"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hovmoller"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#TemporalValue"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hovmoller"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Longitude"/>
+            <Class IRI="#TemporalValue"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hyrax"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hyrax"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#AnimatedMap"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Hovmoller"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#ScatterPlot"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IDV"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VerticalProfile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InSituData"/>
+        <Class IRI="#DataStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IrregularGrid"/>
+        <Class IRI="#Grid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Latitude"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LatitudeResolution"/>
+        <Class IRI="#DataResolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Line"/>
+        <Class IRI="#Vector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiveActionServer"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiveActionServer"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiveActionServer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#NetCDF"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Longitude"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LongitudeResolution"/>
+        <Class IRI="#DataResolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MINX"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MINX"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MINX"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MINX"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MINX"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VerticalProfile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_Toolkit"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_Toolkit"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_Toolkit"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_VIEW"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_VIEW"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_VIEW"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_VIEW"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Histogram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MISR_VIEW"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manifold"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manifold"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manifold"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manifold"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manifold"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Map"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Map"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#Longitude"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Matlab"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#McIDAS-V"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#McIDAS-V"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mesh"/>
+        <Class IRI="#IrregularGrid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosaic"/>
+        <Class IRI="#GeoprocessCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosaic"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NCL"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NCO"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetCDF"/>
+        <Class IRI="#DataFormat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetCDF-THREDDS"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OPeNDAP"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OPeNDAP"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OPeNDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUseAccessProtocol"/>
+            <Class IRI="#DAP"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OPeNDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#HDF"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OPeNDAP"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasInputFormat"/>
+            <Class IRI="#NetCDF"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OSGeo"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Octave"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Octave"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Octave"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUseDataServer"/>
+            <Class IRI="#OPeNDAP"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Hovmoller"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#ScatterPlot"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panoply"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VerticalProfile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Point"/>
+        <Class IRI="#Vector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PointColumn"/>
+        <Class IRI="#InSituData"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PointColumn"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDataDimension"/>
+            <Class IRI="#VerticalPlane"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PointTimeSeries"/>
+        <Class IRI="#InSituData"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PointTimeSeries"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasDataDimension"/>
+            <Class IRI="#TemporalValue"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Polygon"/>
+        <Class IRI="#Vector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QGIS"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QGIS"/>
+        <Class IRI="#OSGeo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QGIS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QGIS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QGIS"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Histogram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#ScatterPlot"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#R"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Raster"/>
+        <Class IRI="#DataStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReST"/>
+        <Class IRI="#HTTP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReformatData"/>
+        <Class IRI="#ServerCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegularGrid"/>
+        <Class IRI="#Grid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SLAMM"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SLAMM"/>
+        <Class IRI="#WebBasedEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SOS"/>
+        <Class IRI="#DataService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SPSS"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScatterPlot"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServerCapability"/>
+        <Class IRI="#Capability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialCoverage"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stitch"/>
+        <Class IRI="#GeoprocessCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stitch"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubsetData"/>
+        <Class IRI="#ServerCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Swath"/>
+        <Class IRI="#IrregularGrid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Swath"/>
+        <ObjectUnionOf>
+            <Class IRI="#Horizontal"/>
+            <Class IRI="#Vertical"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TDS"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TDS"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalCoverage"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalResolution"/>
+        <Class IRI="#DataResolution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemporalValue"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeSeries"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#canUseAccessProtocol"/>
+            <Class IRI="#DataAccessProtocol"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCapability"/>
+            <Class IRI="#VisualizationType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#DataStructure"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VisualizationType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#AccessURL"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#VersionNumber"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UniformRegularGrid"/>
+        <Class IRI="#RegularGrid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Grid"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#AnimatedMap"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Histogram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#TimeSeries"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VISAN"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VerticalProfile"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vector"/>
+        <Class IRI="#DataStructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vertical"/>
+        <Class IRI="#DataOrientation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VerticalPlane"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VerticalProfile"/>
+        <Class IRI="#VisualizationType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualizeData"/>
+        <Class IRI="#ServerCapability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WCS"/>
+        <Class IRI="#DataService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFS"/>
+        <Class IRI="#DataService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WMS"/>
+        <Class IRI="#DataService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WebBasedEnvironment"/>
+        <Class IRI="#ToolEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WebBasedEnvironment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isAccessedBy"/>
+            <Class IRI="#WebBrowser"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WebBrowser"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gvSIG"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gvSIG"/>
+        <Class IRI="#OSGeo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ncBrowse"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ncdump"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ncview"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pydap"/>
+        <Class IRI="#DataServer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pydap"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uDig"/>
+        <Class IRI="#DesktopEnvironment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uDig"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uDig"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Raster"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uDig"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsDataType"/>
+            <Class IRI="#Vector"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uDig"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Map"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#2D"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#2D"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#Longitude"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#2DGrid"/>
+        <Class IRI="#RegularGrid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3D"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3D"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#Longitude"/>
+            <Class IRI="#VerticalPlane"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#3DGrid"/>
+        <Class IRI="#RegularGrid"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#4D"/>
+        <Class IRI="#DataDimension"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#4D"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Latitude"/>
+            <Class IRI="#Longitude"/>
+            <Class IRI="#TemporalValue"/>
+            <Class IRI="#VerticalPlane"/>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#4DGrid"/>
+        <Class IRI="#RegularGrid"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ArcGIS"/>
+        <Class IRI="#ArcGISDesktop"/>
+        <Class IRI="#BEAT"/>
+        <Class IRI="#CDAT"/>
+        <Class IRI="#DChart"/>
+        <Class IRI="#ERRDAP"/>
+        <Class IRI="#Ferret"/>
+        <Class IRI="#GE_Smallworld"/>
+        <Class IRI="#GRASS"/>
+        <Class IRI="#GeoDa"/>
+        <Class IRI="#Giovanni"/>
+        <Class IRI="#GoogleEarth"/>
+        <Class IRI="#GrADS"/>
+        <Class IRI="#HDFView"/>
+        <Class IRI="#HEG"/>
+        <Class IRI="#HYDRA2"/>
+        <Class IRI="#Hyrax"/>
+        <Class IRI="#IDV"/>
+        <Class IRI="#LiveActionServer"/>
+        <Class IRI="#MINX"/>
+        <Class IRI="#MISR_Toolkit"/>
+        <Class IRI="#MISR_VIEW"/>
+        <Class IRI="#Manifold"/>
+        <Class IRI="#Matlab"/>
+        <Class IRI="#McIDAS-V"/>
+        <Class IRI="#NCL"/>
+        <Class IRI="#NCO"/>
+        <Class IRI="#OPeNDAP"/>
+        <Class IRI="#OSGeo"/>
+        <Class IRI="#Octave"/>
+        <Class IRI="#Panoply"/>
+        <Class IRI="#QGIS"/>
+        <Class IRI="#R"/>
+        <Class IRI="#SLAMM"/>
+        <Class IRI="#SPSS"/>
+        <Class IRI="#TDS"/>
+        <Class IRI="#VISAN"/>
+        <Class IRI="#WebBrowser"/>
+        <Class IRI="#gvSIG"/>
+        <Class IRI="#ncBrowse"/>
+        <Class IRI="#ncdump"/>
+        <Class IRI="#ncview"/>
+        <Class IRI="#pydap"/>
+        <Class IRI="#uDig"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Grid"/>
+        <Class IRI="#Raster"/>
+        <Class IRI="#Vector"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#DOI"/>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/dlvu8vopkn7l"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DOI"/>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/aqua/airs/data202"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#ASCII"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataCollection"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#BUFR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#Binary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#CINRAD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataConvention"/>
+        <NamedIndividual IRI="#CMOR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#CSV0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#CSVP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataConvention"/>
+        <NamedIndividual IRI="#ClimateForecast"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LiveActionServer"/>
+        <NamedIndividual IRI="#CoastWatch"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#DMSP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#DORADE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#F-TDS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#FYSAT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GCMDDIFEntry"/>
+        <NamedIndividual IRI="#GES_DISC_AIRS2RET_V006"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GCMDDIFEntry"/>
+        <NamedIndividual IRI="#GES_DISC_GLDAS_MOS10SUBP_3H_V001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GCMDDIFEntry"/>
+        <NamedIndividual IRI="#GES_DISC_OMSO2_V003"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#GINI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GRIB"/>
+        <NamedIndividual IRI="#GRIB-1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GRIB"/>
+        <NamedIndividual IRI="#GRIB-2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#GTOPO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#Gemapak_Grid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#Gempack_Surface"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#GeoJSON"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#GeoTIFF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataConvention"/>
+        <NamedIndividual IRI="#HDF-EOS2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataConvention"/>
+        <NamedIndividual IRI="#HDF-EOS5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#HDF4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HDF"/>
+        <NamedIndividual IRI="#HDF4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#HDF5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HDF"/>
+        <NamedIndividual IRI="#HDF5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#JSON"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#KML"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#McIDASArea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#McIDASGrid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NetCDF"/>
+        <NamedIndividual IRI="#NCML"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#NEXRAD-2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#NEXRAD-3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#NLDN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#NMCon29"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NetCDF"/>
+        <NamedIndividual IRI="#NetCDF3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#NetCDF4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NetCDF"/>
+        <NamedIndividual IRI="#NetCDF4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NetCDF"/>
+        <NamedIndividual IRI="#NetCDF4Classic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NetCDF"/>
+        <NamedIndividual IRI="#NetCDF4Enhanced"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#ODVText"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#SIGMET"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#Shapefile"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#TSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#TSV0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#TSVP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#Text"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#UAMIV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Ferret"/>
+        <NamedIndividual IRI="#UF_GEOIDE_LAS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#USPLM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CDM_File_Type"/>
+        <NamedIndividual IRI="#Universal_Radar_Format"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#XML"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormat"/>
+        <NamedIndividual IRI="#esriASCII"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataCollection"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataCollection"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDIF"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+        <NamedIndividual IRI="#GES_DISC_AIRS2RET_V006"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataConvention"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+        <NamedIndividual IRI="#ClimateForecast"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataConvention"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+        <NamedIndividual IRI="#HDF-EOS2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIdentifier"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/aqua/airs/data202"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDIF"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+        <NamedIndividual IRI="#GES_DISC_GLDAS_MOS10SUBP_3H_V001"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+        <NamedIndividual IRI="#ASCII"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+        <NamedIndividual IRI="#NetCDF4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIdentifier"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+        <NamedIndividual IRI="http://dx.doi.org/10.5067/dlvu8vopkn7l"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDIF"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+        <NamedIndividual IRI="#GES_DISC_OMSO2_V003"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+        <NamedIndividual IRI="#ClimateForecast"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+        <NamedIndividual IRI="#HDF-EOS5"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AccessURL"/>
+        <NamedIndividual IRI="#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AccessURL"/>
+        <NamedIndividual IRI="#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">ftp://hydro1.sci.gsfc.nasa.gov/data/s4pa/GLDAS_V1/GLDAS_MOS10SUBP_3H/</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AccessURL"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://disc.gsfc.nasa.gov/datacollection/OMSO2_V003.html</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#supportsVisualizationType"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#AccessURL"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDataFormat"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#AccessURL"/>
+        <Class IRI="#DataCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canUseAccessProtocol"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#canUseAccessProtocol"/>
+            <Class IRI="#DataServer"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#canUseDataServer"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCapability"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDataConvention"/>
+        <Class IRI="#DataFormat"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <Class IRI="#DataCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInputFormat"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOutputFormat"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAccessedBy"/>
+        <Class IRI="#DataCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOfType"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#providesAccess"/>
+        <Class IRI="#DataServer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supportsVisualizationType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#Tool"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesConvention"/>
+        <Class IRI="#DataCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#visualizedBy"/>
+        <Class IRI="#DataCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#AccessURL"/>
+        <Class IRI="#URL"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canUseAccessProtocol"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#canUseDataServer"/>
+        <Class IRI="#DataServer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCapability"/>
+        <Class IRI="#VisualizationType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDataConvention"/>
+        <Class IRI="#DataConvention"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDataFormat"/>
+        <Class IRI="#DataFormat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInputFormat"/>
+        <Class IRI="#DataFormat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOutputFormat"/>
+        <Class IRI="#DataFormat"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAccessedBy"/>
+        <Class IRI="#DataServer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOfType"/>
+        <Class IRI="#ToolEnvironment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#providesAccess"/>
+        <Class IRI="#DataAccessProtocol"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supportsVisualizationType"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#supportsVisualizationType"/>
+            <Class IRI="#VisualizationType"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesConvention"/>
+        <Class IRI="#DataConvention"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#visualizedBy"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#AccessURL"/>
+    </FunctionalDataProperty>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#AccessURL</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A data collection can be accessed via a particular URL.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AccessURL</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Access URL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AnimatedMap</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Animated Map</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Aqua AIRS Level 2 Standard Physical Retrieval AIRS only</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ArcGISDesktop</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ArcGIS Desktop</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ArcGISServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ArcGIS Server</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ArcGISonline</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ArcGIS Online</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CDAT</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Climate Data Analysis Tools</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CoastWatch</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NOAA CoastWatch</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DODS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Object Description Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#DataAccessProtocol</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A standard set of regulations and requirements governing the access of data electronically</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataAccessProtocol</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Access Protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#DataCollection</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataCollection</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">In some communities this is equivalent to a `Dataset&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataCollection</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Collection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#DataConvention</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Data Convention is an established technique or practice related to the representation of data in data collections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataConvention</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Convention</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#DataFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The organization of information according to preset specifications for the storage of data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#DataServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ToolMatch Data Server is a piece of software that can access, manipulate, and return data products derived from datasets, including the datasets themselves</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Server</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DataService</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataStructure</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">was &apos;Data Type&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DesktopEnvironment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Desktop Environment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GCMDDIFEntry</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GCMD DIF Entry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GE_Smallworld</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GE Smallworld</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GeoprocessCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Geoprocess Capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GoogleEarth</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Google Earth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Grid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gridded data (or raster data) are the result of converting scattered individual data points from one or more sources into a regular &quot;grid&quot; (or &quot;raster&quot;) of calculated values based on spacial parameters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LiveActionServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Live Action Server</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MISR_Toolkit</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MISR Toolkit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MISR_VIEW</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MISR View</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NetCDF-THREDDS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">What is this?  What does it do?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PointColumn</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">main dimension is Z - e.g., well logs, dropsondes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PointTimeSeries</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">main dimension is T - e.g., sun photometers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RegularGrid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Includes level 3 data, and level 4 model output</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ScatterPlot</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Scatter Plot</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SubsetData</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">type of NetCDF service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Swath</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Level 1 and Level 2 data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TDS</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Thredds Data Server</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TimeSeries</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Time Series</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#Tool</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A ToolMatch Tool is a computer-based utility that can be used for data access, manipulation, and visualization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tool</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tool</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#ToolEnvironment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The method in which a tool can be used, such as as a desktop application, browser application, web service, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ToolEnvironment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tool Environment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UF_GEOIDE_LAS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">UF GEOIDE LAS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UniformRegularGrid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">should have a well known projection (from Panoply documentation)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VersionNumber</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has Version Number</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VerticalProfile</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Vertical Profile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VisualizationType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">htmlTable, from visualization options on DataCollection /Tools</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VisualizationType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Visualization Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WCS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Web Catalogue Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WFS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Web Feature Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WMS</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Web Map Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WebBasedEnvironment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">runs in browser</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WebBasedEnvironment</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Web-based environment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WebBrowser</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Web Browser</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#accessLink"/>
+        <IRI>#accessLink</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">http://upwell.pfeg.noaa.gov/erddap/index.html</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#canUseAccessProtocol</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies the access protocols that the tool can use to access data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#canUseAccessProtocol</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Can Use Data Access Protocol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#canUseDataServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies the type of data servers with which the tool can interract.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#canUseDataServer</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Can Use Data Server</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#hasCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies the different facilities available through the tool for visualizing data products.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDIF</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GCMD DIF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDIF</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has DIF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#hasDataFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Data Collection is stored in a particular data format.   Examples include: hdf5, netcdf, binary, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDataFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Data Format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasIdentifier</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Data Collection Identifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasIdentifier</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Identifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#hasInputFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A tool can input or import data products that are encoded in a specified format.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasInputFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Input Format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#hasOutputFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A tool can output data products in a particular format.  Examples include:  jpg, json, netcdf4, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasOutputFormat</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Has Output Format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#isAccessedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Data Collection can be accessed by a particular Server.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isAccessedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is Accessed By</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#isOfType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The tool can be a desktop app, browser app, web service, etc...</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isOfType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Is Of Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#providesAccess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Data Server can provide access to data and information using a particular protocol.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#providesAccess</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Provides Access</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#supportsDataType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Supports Data Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#supportsVisualizationType</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Supports Visualization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#usesConvention</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A data collection follows a particular set of agreed upon rules in its representation and metadata.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#usesConvention</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Uses Convention</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <IRI>#visualizedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Data Collection can be visuzlied by a particular tool.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#visualizedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Visualized By</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#2D</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">2 dimensional data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#2DGrid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">(X, Y);  i.e. time snapshot, time average, climatology
+(Y, Z);  i.e. zonal mean vs. depth</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#3D</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">3 dimensional data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#3DGrid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">X, Y, Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#4D</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">4 dimensional data</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#4DGrid</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">X, Y, Z, T</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GLDAS Mosaic Land Surface Model L4 3 Hourly 1.0 x 1.0 degree Subsetted V001 (GLDAS_MOS10SUBP_3H) at GES DISC</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OMI/Aura Sulphur Dioxide (SO2) Total Column 1-orbit L2 Swath 13x24 km V003 (OMSO2)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <AnonymousIndividual nodeID="_:genid44"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Chris Lynnes</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#accessLink"/>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

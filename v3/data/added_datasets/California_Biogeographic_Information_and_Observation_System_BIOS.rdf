@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:gcmd="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:DataCollection rdf:about="&toolmatchi;California_Biogeographic_Information_and_Observation_System_BIOS">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">California_Biogeographic_Information_and_Observation_System_BIOS</rdfs:label>
+  <dcat:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">California_Biogeographic_Information_and_Observation_System_BIOS</dcat:title>
+			<dc:identifier rdf:parseType="Literal">NEED TO FILL IN</dc:identifier>
+			<gcmd:Entry_ID rdf:parseType="Literal">NEED TO FILL IN</gcmd:Entry_ID>
+			<toolmatch:hasAccessURL rdf:resource="NEED TO FILL IN"/>
+			<dcat:description rdf:parseType="Literal">California Department of Fish and Game's central repository for biological observation and distribution info. Contains over 600 individual databases including the CA Natural Heritage Program data. Provides tools for querying and reporting. Useful for site specific project work.</dcat:description>
+			<toolmatch:hasDataFormat rdf:resource="http://toolmatch.esipfed.org/instances/NetCDF3"/>
+		</toolmatch:DataCollection>
+</rdf:RDF>

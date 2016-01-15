@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY tooli "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY tool "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:tool="&tool;"
+  xmlns:tooli="&tooli;"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&tool;"
+  xml:base="&tool;">
+  <tool:Tool rdf:about="&tooli;HDFView">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HDFView</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HDFView</dc:title>
+    <doap:homepage rdf:resource="http://www.hdfgroup.org/products/java/hdfview/index.html"/>
+    <dc:description rdf:parseType="Literal">HDFView is a visual tool for browsing and editing HDF4 and HDF5 files. Using HDFView, you can view a file hierarchy in a tree structure create new file, add or delete groups and datasets view and modify the content of a dataset add, delete and modify attributes</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/HDFView_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&tooli;HDFView_1.8.13">
+        <doap:revision>1.8.13</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF-EOS2"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF-EOS5"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF4"/>
+    <tool:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF5"/>
+    <tool:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF-EOS2"/>
+    <tool:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF-EOS5"/>
+    <tool:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF4"/>
+    <tool:hasOutputFormat rdf:resource="http://toolmatch.esipfed.org/instances/HDF5"/>
+  </tool:Tool>
+</rdf:RDF>

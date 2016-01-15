@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY toolmatchi "http://toolmatch.esipfed.org/instances/">
+  <!ENTITY toolmatch "http://toolmatch.esipfed.org/schema#">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+  <!ENTITY doap "http://usefulinc.com/ns/doap#">
+   
+]>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doap="&doap;"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:toolmatch="&toolmatch;"
+  xmlns:toolmatchi="&toolmatchi;"
+  xmlns:gcmd="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns="&toolmatch;"
+  xml:base="&toolmatch;"><toolmatch:Tool rdf:about="&toolmatchi;McIDAS_V">
+    <rdf:type rdf:resource="&doap;Project"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">McIDAS_V</rdfs:label>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">McIDAS_V</dc:title>
+    <doap:homepage rdf:resource="http://www.ssec.wisc.edu/mcidas/software/v/about.html"/>
+    <dc:description rdf:parseType="Literal">McIDAS-V is a free, open source, visualization and data analysis software package that is the fifth generation in SSEC's 40 year history of sophisticated McIDAS (Man computer Interactive Data Access System) software packages. McIDAS-V displays weather satellite (including hyperspectral) and other geophysical data in 2- and 3-dimensions, and can be used to analyze and manipulate the data with its powerful mathematical functions.
+
+More McIDAS-V features and characteristics:
+
+Java-based, open-source, and freely available;
+Is built on VisAD and IDV and incorporates the functionality of McIDAS-X and HYDRA for viewing data, developing algorithms, and validating results;
+Includes tools for research and operational users of observational, model, and satellite data, including data from multi- and hyper-spectral sensors on both current and future satellites;
+Allows automatic reprojection of both local and remote data for easy integration of different data sources and formats; and
+Includes a “bridge” to McIDAS-X, allowing –X users to continue using legacy code in -X, while visualizing in McIDAS-V</dc:description>
+    <foaf:depiction>
+      <foaf:Image rdf:about="http://toolmatch.esipfed.org/added_tools/logos/McIDAS_V_logo.png"/>
+    </foaf:depiction>
+    <doap:release>
+      <doap:Version rdf:about="&toolmatchi;McIDAS_V_1.4">
+        <doap:revision>1.4</doap:revision>
+      </doap:Version>
+    </doap:release>
+    <toolmatch:hasInputFormat rdf:resource="http://toolmatch.esipfed.org/instances/DAP"/>
+  </toolmatch:Tool>
+</rdf:RDF>
