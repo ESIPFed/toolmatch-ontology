@@ -139,10 +139,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#DataResolution"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HTTP"/>
+        <Class IRI="#Giovanni"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Giovanni"/>
+        <Class IRI="#HTTP"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GoogleEarth"/>
@@ -151,16 +151,16 @@ Date: 2015-11-26</Literal>
         <Class IRI="#ncdump"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#NetCDF"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Gemapak_Grid"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasInputFormat"/>
+        <Class IRI="#NetCDF"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HDF"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInputFormat"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#GRIB-1"/>
@@ -169,19 +169,19 @@ Date: 2015-11-26</Literal>
         <Class IRI="#DAP"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Hovmoller"/>
+        <ObjectProperty IRI="#canUseAccessProtocol"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#canUseAccessProtocol"/>
+        <Class IRI="#Hovmoller"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LiveActionServer"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#TSV"/>
+        <Class IRI="#TDS"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TDS"/>
+        <NamedIndividual IRI="#TSV"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DataStructure"/>
@@ -202,10 +202,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#Histogram"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ncview"/>
+        <Class IRI="#DataService"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DataService"/>
+        <Class IRI="#ncview"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Latitude"/>
@@ -220,10 +220,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#Swath"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#UAMIV"/>
+        <Class IRI="#IDV"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#IDV"/>
+        <NamedIndividual IRI="#UAMIV"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Stitch"/>
@@ -253,25 +253,25 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#XML"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DODS"/>
+        <NamedIndividual IRI="#SIGMET"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#SIGMET"/>
+        <Class IRI="#DODS"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DataCollection"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DataFormat"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#NLDN"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#DataFormat"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Matlab"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GCMDDIFEntry"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Map"/>
@@ -280,10 +280,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#MINX"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ClimateForecast"/>
+        <Class IRI="#ArcGIS"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ArcGIS"/>
+        <NamedIndividual IRI="#ClimateForecast"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GeoServer"/>
@@ -292,22 +292,22 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#TSVP"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ReformatData"/>
+        <NamedIndividual IRI="#HDF-EOS5"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Mesh"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#HDF-EOS5"/>
+        <Class IRI="#ReformatData"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DataOrientation"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#GeoTIFF"/>
+        <ObjectProperty IRI="#primaryDataConvention"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#primaryDataConvention"/>
+        <NamedIndividual IRI="#GeoTIFF"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usesConvention"/>
@@ -328,13 +328,16 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#NMCon29"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ERDDAP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TSV0"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#NetCDF4Enhanced"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ServerCapability"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TSV0"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HDF4"/>
@@ -385,13 +388,10 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="http://dx.doi.org/10.5067/aqua/airs/data202"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#FYSAT"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#pydap"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ERRDAP"/>
+        <NamedIndividual IRI="#FYSAT"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#NetCDF3"/>
@@ -442,10 +442,10 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#USPLM"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CDM_File_Type"/>
+        <Class IRI="#4D"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#4D"/>
+        <Class IRI="#CDM_File_Type"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GeoprocessCapability"/>
@@ -466,10 +466,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#IrregularGrid"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HTMLtable"/>
+        <NamedIndividual IRI="#CSV0"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#CSV0"/>
+        <Class IRI="#HTMLtable"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CINRAD"/>
@@ -487,13 +487,13 @@ Date: 2015-11-26</Literal>
         <Class IRI="#UniformRegularGrid"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#3D"/>
+        <Class IRI="#DataConvention"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MISR_VIEW"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DataConvention"/>
+        <Class IRI="#3D"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDataFormat"/>
@@ -550,10 +550,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#QGIS"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SPSS"/>
+        <Class IRI="#TemporalCoverage"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TemporalCoverage"/>
+        <Class IRI="#SPSS"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Octave"/>
@@ -583,10 +583,10 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#GTOPO"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BUFR"/>
+        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)"/>
+        <NamedIndividual IRI="#BUFR"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDIF"/>
@@ -631,13 +631,13 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#Gempack_Surface"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Polygon"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasOutputFormat"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GeoDa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Polygon"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#providesAccess"/>
@@ -670,10 +670,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#Hyrax"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SubsetData"/>
+        <Class IRI="#Ferret"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Ferret"/>
+        <Class IRI="#SubsetData"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#GES_DISC_AIRS2RET_V006"/>
@@ -682,13 +682,13 @@ Date: 2015-11-26</Literal>
         <Class IRI="#GRIB"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WFS"/>
-    </Declaration>
-    <Declaration>
         <AnnotationProperty abbreviatedIRI="foaf:name"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#F-TDS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFS"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasIdentifier"/>
@@ -996,29 +996,29 @@ Date: 2015-11-26</Literal>
         <Class IRI="#ToolEnvironment"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <Class IRI="#DataServer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasInputFormat"/>
             <Class IRI="#HDF"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasInputFormat"/>
             <Class IRI="#NetCDF"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#supportsDataType"/>
             <Class IRI="#Grid"/>
@@ -1107,6 +1107,10 @@ Date: 2015-11-26</Literal>
     <SubClassOf>
         <Class IRI="#GRASS"/>
         <Class IRI="#OSGeo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GRASS"/>
+        <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GRASS"/>
@@ -2195,7 +2199,7 @@ Date: 2015-11-26</Literal>
         <Class IRI="#BEAT"/>
         <Class IRI="#CDAT"/>
         <Class IRI="#DChart"/>
-        <Class IRI="#ERRDAP"/>
+        <Class IRI="#ERDDAP"/>
         <Class IRI="#Ferret"/>
         <Class IRI="#GE_Smallworld"/>
         <Class IRI="#GRASS"/>
@@ -2840,6 +2844,11 @@ Date: 2015-11-26</Literal>
         <AnnotationProperty abbreviatedIRI="dc:description"/>
         <IRI>#Grid</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gridded data (or raster data) are the result of converting scattered individual data points from one or more sources into a regular &quot;grid&quot; (or &quot;raster&quot;) of calculated values based on spacial parameters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+        <IRI>#InSituData</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This should be removed.  It would likely be better served as a property of point data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
