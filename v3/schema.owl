@@ -271,9 +271,6 @@ Date: 2015-11-26</Literal>
         <Class IRI="#Matlab"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GCMDDIFEntry"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Map"/>
     </Declaration>
     <Declaration>
@@ -388,10 +385,10 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="http://dx.doi.org/10.5067/aqua/airs/data202"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#pydap"/>
+        <NamedIndividual IRI="#FYSAT"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#FYSAT"/>
+        <Class IRI="#pydap"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#NetCDF3"/>
@@ -499,10 +496,16 @@ Date: 2015-11-26</Literal>
         <ObjectProperty IRI="#hasDataFormat"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GRASS_GIS"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HYDRA2"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#NEXRAD-3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GCMDDIFEntryID"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#KML"/>
@@ -533,9 +536,6 @@ Date: 2015-11-26</Literal>
     </Declaration>
     <Declaration>
         <Class IRI="#DataAccessProtocol"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GRASS"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Longitude"/>
@@ -1072,11 +1072,11 @@ Date: 2015-11-26</Literal>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#GCMDDIFEntryID"/>
         <Class IRI="#Identifier"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#GCMDDIFEntryID"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#AccessURL"/>
             <Class IRI="#URL"/>
@@ -1101,33 +1101,33 @@ Date: 2015-11-26</Literal>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <Class IRI="#DesktopEnvironment"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <Class IRI="#OSGeo"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#supportsDataType"/>
             <Class IRI="#Grid"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#supportsDataType"/>
             <Class IRI="#Raster"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#supportsDataType"/>
             <Class IRI="#Vector"/>
@@ -2202,7 +2202,7 @@ Date: 2015-11-26</Literal>
         <Class IRI="#ERDDAP"/>
         <Class IRI="#Ferret"/>
         <Class IRI="#GE_Smallworld"/>
-        <Class IRI="#GRASS"/>
+        <Class IRI="#GRASS_GIS"/>
         <Class IRI="#GeoDa"/>
         <Class IRI="#Giovanni"/>
         <Class IRI="#GoogleEarth"/>
@@ -2313,15 +2313,15 @@ Date: 2015-11-26</Literal>
         <NamedIndividual IRI="#FYSAT"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#GCMDDIFEntryID"/>
         <NamedIndividual IRI="#GES_DISC_AIRS2RET_V006"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#GCMDDIFEntryID"/>
         <NamedIndividual IRI="#GES_DISC_GLDAS_MOS10SUBP_3H_V001"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#GCMDDIFEntry"/>
+        <Class IRI="#GCMDDIFEntryID"/>
         <NamedIndividual IRI="#GES_DISC_OMSO2_V003"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -2822,7 +2822,7 @@ Date: 2015-11-26</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#GCMDDIFEntry</IRI>
+        <IRI>#GCMDDIFEntryID</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GCMD DIF Entry</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
