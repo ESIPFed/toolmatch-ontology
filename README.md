@@ -1,7 +1,5 @@
-Toolmatch
+ToolMatch Ontology Repository
 =========
-
-### ToolMatch Ontology Repository
 
 This repository is dedicated to the underlying ontology (or ontologies) used by the ToolMatch service.  These are under current development.
 
