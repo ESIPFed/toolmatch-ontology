@@ -1,0 +1,2606 @@
+@prefix : <http://toolmatch.esipfed.org/schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tw: <http://tw.rpi.edu/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix twi: <http://tw.rpi.edu/instances/> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@base <http://toolmatch.esipfed.org/schema> .
+
+<http://toolmatch.esipfed.org/schema> rdf:type owl:Ontology ;
+                                      
+                                      owl:versionIRI <http://toolmatch.esipfed.org/schema/2.0> ;
+                                      
+                                      owl:imports time: ,
+                                                  foaf: ;
+                                      
+                                      rdfs:comment "ToolMatch is an ontology and set of rules that can help researchers determine what tools can be used given a particular set of data, or find data that can be used within a tool."@en ;
+                                      
+                                      dc:rights "This ontology is distributed under a Creative Commons Attribution License http://creativecommons.org/licenses/by/3.0/"@en ;
+                                      
+                                      dc:publisher twi:ESIPFederation ;
+                                      
+                                      dc:contributor twi:EricRozell ,
+                                                     twi:person/MatthewFerritto ;
+                                      
+                                      dc:date "2015-11-27"^^xsd:dateTime ;
+                                      
+                                      owl:versionInfo """v 2.0 
+Revision: 9878
+Date: 2015-11-26"""@en ;
+                                      
+                                      dc:contributor twi:person/NancyHoebelheinrich ,
+                                                     twi:PatrickWest ;
+                                      
+                                      rdfs:label "ToolMatch Ontology and Rules"@en ;
+                                      
+                                      dc:contributor twi:Christopher_Lynnes .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/elements/1.1/rights
+
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/dc/terms/description
+
+terms:description rdf:type owl:AnnotationProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#accessLink
+
+:accessLink rdf:type owl:AnnotationProperty ;
+            
+            :accessLink "http://upwell.pfeg.noaa.gov/erddap/index.html"^^xsd:anyURI ;
+            
+            rdfs:subPropertyOf terms:description .
+
+
+
+###  http://xmlns.com/foaf/0.1/name
+
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://toolmatch.esipfed.org/schema#AccessURL
+
+:AccessURL rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           
+           rdfs:domain :DataCollection ;
+           
+           rdfs:range :URL .
+
+
+
+###  http://toolmatch.esipfed.org/schema#canUseAccessProtocol
+
+:canUseAccessProtocol rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty :canUseAccessProtocol ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :DataServer
+                                  ] ;
+                      
+                      rdfs:range :DataAccessProtocol ;
+                      
+                      dc:description "Specifies the access protocols that the tool can use to access data."@en ;
+                      
+                      rdfs:label "Can Use Data Access Protocol"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#canUseDataServer
+
+:canUseDataServer rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain :Tool ;
+                  
+                  rdfs:range :DataServer ;
+                  
+                  dc:description "Specifies the type of data servers with which the tool can interract."@en ;
+                  
+                  rdfs:label "Can Use Data Server"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasCapability
+
+:hasCapability rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain :Tool ;
+               
+               rdfs:range :VisualizationType ;
+               
+               dc:description "Specifies the different facilities available through the tool for visualizing data products."@en ;
+               
+               rdfs:label "Has Capability"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasDIF
+
+:hasDIF rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "GCMD DIF"@en ;
+        
+        rdfs:label "Has DIF"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasDataConvention
+
+:hasDataConvention rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:domain :DataFormat ;
+                   
+                   rdfs:range :DataConvention .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasDataDimension
+
+:hasDataDimension rdf:type owl:ObjectProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasDataFormat
+
+:hasDataFormat rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               
+               rdfs:domain :DataCollection ;
+               
+               rdfs:range :DataFormat ;
+               
+               dc:description "A Data Collection is stored in a particular data format.   Examples include: hdf5, netcdf, binary, etc."@en ;
+               
+               rdfs:label "Has Data Format"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasIdentifier
+
+:hasIdentifier rdf:type owl:ObjectProperty ;
+               
+               rdfs:comment "Data Collection Identifier" ;
+               
+               rdfs:label "Has Identifier"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasInputFormat
+
+:hasInputFormat rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Tool ;
+                
+                rdfs:range :DataFormat ;
+                
+                dc:description "A tool can input or import data products that are encoded in a specified format."@en ;
+                
+                rdfs:label "Has Input Format"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#hasOutputFormat
+
+:hasOutputFormat rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Tool ;
+                 
+                 rdfs:range :DataFormat ;
+                 
+                 dc:description "A tool can output data products in a particular format.  Examples include:  jpg, json, netcdf4, etc."@en ;
+                 
+                 rdfs:label "Has Output Format"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#isAccessedBy
+
+:isAccessedBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :DataCollection ;
+              
+              rdfs:range :DataServer ;
+              
+              dc:description "A Data Collection can be accessed by a particular Server."@en ;
+              
+              rdfs:label "Is Accessed By"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#isOfType
+
+:isOfType rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Tool ;
+          
+          rdfs:range :ToolEnvironment ;
+          
+          dc:description "The tool can be a desktop app, browser app, web service, etc..."@en ;
+          
+          rdfs:label "Is Of Type"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#primaryDataConvention
+
+:primaryDataConvention rdf:type owl:ObjectProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#providesAccess
+
+:providesAccess rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :DataServer ;
+                
+                rdfs:range :DataAccessProtocol ;
+                
+                dc:description "A Data Server can provide access to data and information using a particular protocol."@en ;
+                
+                rdfs:label "Provides Access"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#supportsDataType
+
+:supportsDataType rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:label "Supports Data Type"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#supportsVisualizationType
+
+:supportsVisualizationType rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           
+                           rdfs:domain [ rdf:type owl:Restriction ;
+                                         owl:onProperty :supportsVisualizationType ;
+                                         owl:someValuesFrom :Tool
+                                       ] ;
+                           
+                           rdfs:range [ rdf:type owl:Restriction ;
+                                        owl:onProperty :supportsVisualizationType ;
+                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :VisualizationType
+                                      ] ;
+                           
+                           rdfs:label "Supports Visualization"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#usesConvention
+
+:usesConvention rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :DataCollection ;
+                
+                rdfs:range :DataConvention ;
+                
+                dc:description "A data collection follows a particular set of agreed upon rules in its representation and metadata."@en ;
+                
+                rdfs:label "Uses Convention"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#visualizedAs2DGRID
+
+:visualizedAs2DGRID rdf:type owl:ObjectProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#visualizedAs3DGRID
+
+:visualizedAs3DGRID rdf:type owl:ObjectProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#visualizedBy
+
+:visualizedBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :DataCollection ;
+              
+              rdfs:range :Tool ;
+              
+              dc:description "A Data Collection can be visuzlied by a particular tool."@en ;
+              
+              rdfs:label "Visualized By"@en .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://toolmatch.esipfed.org/schema#AccessURL
+
+:AccessURL rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VersionNumber
+
+:VersionNumber rdf:type owl:DatatypeProperty ;
+               
+               rdfs:label "has Version Number"@en .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://toolmatch.esipfed.org/schema#AnimatedMap
+
+:AnimatedMap rdf:type owl:Class ;
+             
+             rdfs:subClassOf :VisualizationType ,
+                             [ owl:intersectionOf ( :Latitude
+                                                    :Longitude
+                                                    :TemporalValue
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+             
+             rdfs:label "Animated Map"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ArcGIS
+
+:ArcGIS rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ArcGISDesktop
+
+:ArcGISDesktop rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ArcGIS ,
+                               :DesktopEnvironment ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCapability ;
+                                 owl:someValuesFrom :Mosaic
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCapability ;
+                                 owl:someValuesFrom :Stitch
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCapability ;
+                                 owl:someValuesFrom :SubsetData
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsDataType ;
+                                 owl:someValuesFrom :Grid
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsDataType ;
+                                 owl:someValuesFrom :Raster
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsDataType ;
+                                 owl:someValuesFrom :Vector
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :AnimatedMap
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :Histogram
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :Map
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :ScatterPlot
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :TimeSeries
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsVisualizationType ;
+                                 owl:someValuesFrom :VerticalProfile
+                               ] ;
+               
+               rdfs:label "ArcGIS Desktop"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ArcGISServer
+
+:ArcGISServer rdf:type owl:Class ;
+              
+              rdfs:subClassOf :ArcGIS ,
+                              :DataServer ,
+                              :WebBasedEnvironment ;
+              
+              rdfs:label "ArcGIS Server"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ArcGISonline
+
+:ArcGISonline rdf:type owl:Class ;
+              
+              rdfs:subClassOf :ArcGIS ,
+                              :WebBasedEnvironment ;
+              
+              rdfs:label "ArcGIS Online"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#BEAT
+
+:BEAT rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DesktopEnvironment ,
+                      :Tool ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCapability ;
+                        owl:someValuesFrom :SubsetData
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Grid
+                      ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CDAT
+
+:CDAT rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Tool ;
+      
+      rdfs:comment "Climate Data Analysis Tools"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CDM_File_Type
+
+:CDM_File_Type rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Capability
+
+:Capability rdf:type owl:Class .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DAP
+
+:DAP rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataAccessProtocol .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DChart
+
+:DChart rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DODS
+
+:DODS rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DataService ;
+      
+      rdfs:comment "Data Object Description Service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DOI
+
+:DOI rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Identifier ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :AccessURL ;
+                       owl:someValuesFrom :URL
+                     ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataAccessProtocol
+
+:DataAccessProtocol rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasInputFormat ;
+                                      owl:someValuesFrom :DataFormat
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasOutputFormat ;
+                                      owl:someValuesFrom :DataFormat
+                                    ] ;
+                    
+                    dc:description "A standard set of regulations and requirements governing the access of data electronically"@en ;
+                    
+                    rdfs:label "Data Access Protocol"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataCollection
+
+:DataCollection rdf:type owl:Class ;
+                
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasIdentifier ;
+                                  owl:someValuesFrom :Identifier
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAccessedBy ;
+                                  owl:someValuesFrom :DataAccessProtocol
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :usesConvention ;
+                                  owl:someValuesFrom :DataConvention
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :visualizedBy ;
+                                  owl:someValuesFrom :Tool
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDataFormat ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :DataFormat
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :AccessURL ;
+                                  owl:someValuesFrom xsd:anyURI
+                                ] ;
+                
+                dc:description "A collection of related sets of information that is composed of separate elements but can be manipulated as a unit by a computer."@en ;
+                
+                rdfs:comment "In some communities this is equivalent to a `Dataset'"@en ;
+                
+                rdfs:label "Data Collection"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataConvention
+
+:DataConvention rdf:type owl:Class ;
+                
+                dc:description "A Data Convention is an established technique or practice related to the representation of data in data collections."@en ;
+                
+                rdfs:label "Data Convention"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataDimension
+
+:DataDimension rdf:type owl:Class .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataFormat
+
+:DataFormat rdf:type owl:Class ;
+            
+            dc:description "The organization of information according to preset specifications for the storage of data."@en ;
+            
+            rdfs:label "Data Format"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataOrientation
+
+:DataOrientation rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataResolution
+
+:DataResolution rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataServer
+
+:DataServer rdf:type owl:Class ;
+            
+            rdfs:subClassOf :ToolEnvironment ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :canUseAccessProtocol ;
+                              owl:someValuesFrom :DataAccessProtocol
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCapability ;
+                              owl:someValuesFrom :ServerCapability
+                            ] ;
+            
+            dc:description "A ToolMatch Data Server is a piece of software that can access, manipulate, and return data products derived from datasets, including the datasets themselves"@en ;
+            
+            rdfs:label "Data Server"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataService
+
+:DataService rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :canUseAccessProtocol ;
+                               owl:someValuesFrom :DataAccessProtocol
+                             ] ;
+             
+             rdfs:label "Data Service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DataStructure
+
+:DataStructure rdf:type owl:Class ;
+               
+               rdfs:comment "was 'Data Type'"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DesktopEnvironment
+
+:DesktopEnvironment rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :ToolEnvironment ;
+                    
+                    rdfs:label "Desktop Environment"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ERDDAP
+
+:ERDDAP rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataServer ,
+                        :Tool ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasInputFormat ;
+                          owl:someValuesFrom :HDF
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasInputFormat ;
+                          owl:someValuesFrom :NetCDF
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsDataType ;
+                          owl:someValuesFrom :Grid
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#FTP
+
+:FTP rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataAccessProtocol .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Ferret
+
+:Ferret rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataServer ,
+                        :Tool ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCapability ;
+                          owl:someValuesFrom :SubsetData
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsDataType ;
+                          owl:someValuesFrom :Grid
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsVisualizationType ;
+                          owl:someValuesFrom :Hovmoller
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsVisualizationType ;
+                          owl:someValuesFrom :Map
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsVisualizationType ;
+                          owl:someValuesFrom :TimeSeries
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GCMDDIFEntryID
+
+:GCMDDIFEntryID rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Identifier ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :AccessURL ;
+                                  owl:someValuesFrom :URL
+                                ] ;
+                
+                rdfs:label "GCMD DIF Entry"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GE_Smallworld
+
+:GE_Smallworld rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Tool ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsDataType ;
+                                 owl:someValuesFrom :Raster
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :supportsDataType ;
+                                 owl:someValuesFrom :Vector
+                               ] ;
+               
+               rdfs:label "GE Smallworld"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GRASS_GIS
+
+:GRASS_GIS rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DesktopEnvironment ,
+                           :OSGeo ,
+                           :Tool ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Grid
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Raster
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Vector
+                           ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GRIB
+
+:GRIB rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GeoDa
+
+:GeoDa rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DesktopEnvironment ,
+                       :Tool ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Raster
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Vector
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :Map
+                       ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GeoServer
+
+:GeoServer rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DataServer ,
+                           :OSGeo ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Grid
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Raster
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Vector
+                           ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GeoprocessCapability
+
+:GeoprocessCapability rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :Capability ;
+                      
+                      rdfs:label "Geoprocess Capability"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Giovanni
+
+:Giovanni rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Tool ,
+                          :WebBasedEnvironment .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GoogleEarth
+
+:GoogleEarth rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Tool ,
+                             :WebBasedEnvironment ;
+             
+             rdfs:label "Google Earth"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GrADS
+
+:GrADS rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DesktopEnvironment ,
+                       :Tool ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Grid
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Raster
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Vector
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :Map
+                       ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Grid
+
+:Grid rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DataStructure ;
+      
+      dc:description "Gridded data (or raster data) are the result of converting scattered individual data points from one or more sources into a regular \"grid\" (or \"raster\") of calculated values based on spacial parameters."@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDF
+
+:HDF rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDFView
+
+:HDFView rdf:type owl:Class ;
+         
+         rdfs:subClassOf :DesktopEnvironment ,
+                         :Tool ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCapability ;
+                           owl:someValuesFrom :SubsetData
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsDataType ;
+                           owl:someValuesFrom :Grid
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :Map
+                         ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HEG
+
+:HEG rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DesktopEnvironment ,
+                     :Tool ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasCapability ;
+                       owl:someValuesFrom :Mosaic
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasCapability ;
+                       owl:someValuesFrom :Stitch
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasCapability ;
+                       owl:someValuesFrom :SubsetData
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsDataType ;
+                       owl:someValuesFrom :Grid
+                     ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HTMLtable
+
+:HTMLtable rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VisualizationType .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HTTP
+
+:HTTP rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DataAccessProtocol .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HYDRA2
+
+:HYDRA2 rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DesktopEnvironment ,
+                        :Tool ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsVisualizationType ;
+                          owl:someValuesFrom :ScatterPlot
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Histogram
+
+:Histogram rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VisualizationType .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Horizontal
+
+:Horizontal rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DataOrientation .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Hovmoller
+
+:Hovmoller rdf:type owl:Class ;
+           
+           rdfs:subClassOf :VisualizationType ,
+                           [ owl:intersectionOf ( :Latitude
+                                                  :TemporalValue
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ owl:intersectionOf ( :Longitude
+                                                  :TemporalValue
+                                                ) ;
+                             rdf:type owl:Class
+                           ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Hyrax
+
+:Hyrax rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DataServer ,
+                       :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#IDV
+
+:IDV rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DesktopEnvironment ,
+                     :Tool ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsDataType ;
+                       owl:someValuesFrom :Grid
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsDataType ;
+                       owl:someValuesFrom :Raster
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :AnimatedMap
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :Hovmoller
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :Map
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :ScatterPlot
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :TimeSeries
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :supportsVisualizationType ;
+                       owl:someValuesFrom :VerticalProfile
+                     ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Identifier
+
+:Identifier rdf:type owl:Class .
+
+
+
+###  http://toolmatch.esipfed.org/schema#InSituData
+
+:InSituData rdf:type owl:Class ;
+            
+            rdfs:subClassOf :DataStructure ;
+            
+            owl:deprecated "This should be removed.  It would likely be better served as a property of point data."@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#IrregularGrid
+
+:IrregularGrid rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Grid .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Latitude
+
+:Latitude rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#LatitudeResolution
+
+:LatitudeResolution rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :DataResolution .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Line
+
+:Line rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Vector .
+
+
+
+###  http://toolmatch.esipfed.org/schema#LiveActionServer
+
+:LiveActionServer rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :DataServer ,
+                                  :Tool ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasInputFormat ;
+                                    owl:someValuesFrom :NetCDF
+                                  ] ;
+                  
+                  rdfs:label "Live Action Server"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Longitude
+
+:Longitude rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#LongitudeResolution
+
+:LongitudeResolution rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :DataResolution .
+
+
+
+###  http://toolmatch.esipfed.org/schema#MINX
+
+:MINX rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DesktopEnvironment ,
+                      :Tool ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Grid
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsVisualizationType ;
+                        owl:someValuesFrom :Map
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsVisualizationType ;
+                        owl:someValuesFrom :VerticalProfile
+                      ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#MISR_Toolkit
+
+:MISR_Toolkit rdf:type owl:Class ;
+              
+              rdfs:subClassOf :DesktopEnvironment ,
+                              :Tool ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :supportsDataType ;
+                                owl:someValuesFrom :Grid
+                              ] ;
+              
+              rdfs:label "MISR Toolkit"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#MISR_VIEW
+
+:MISR_VIEW rdf:type owl:Class ;
+           
+           rdfs:subClassOf :DesktopEnvironment ,
+                           :Tool ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsDataType ;
+                             owl:someValuesFrom :Grid
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsVisualizationType ;
+                             owl:someValuesFrom :Histogram
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :supportsVisualizationType ;
+                             owl:someValuesFrom :Map
+                           ] ;
+           
+           rdfs:label "MISR View"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Manifold
+
+:Manifold rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesktopEnvironment ,
+                          :Tool ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :supportsDataType ;
+                            owl:someValuesFrom :Raster
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :supportsDataType ;
+                            owl:someValuesFrom :Vector
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :supportsVisualizationType ;
+                            owl:someValuesFrom :Map
+                          ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Map
+
+:Map rdf:type owl:Class ;
+     
+     rdfs:subClassOf :VisualizationType ,
+                     [ owl:intersectionOf ( :Latitude
+                                            :Longitude
+                                          ) ;
+                       rdf:type owl:Class
+                     ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Matlab
+
+:Matlab rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#McIDAS-V
+
+:McIDAS-V rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DesktopEnvironment ,
+                          :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Mesh
+
+:Mesh rdf:type owl:Class ;
+      
+      rdfs:subClassOf :IrregularGrid .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Mosaic
+
+:Mosaic rdf:type owl:Class ;
+        
+        rdfs:subClassOf :GeoprocessCapability ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsDataType ;
+                          owl:someValuesFrom :Raster
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NCL
+
+:NCL rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NCO
+
+:NCO rdf:type owl:Class ;
+     
+     rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF
+
+:NetCDF rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF-THREDDS
+
+:NetCDF-THREDDS rdf:type owl:Class ;
+                
+                rdfs:subClassOf :DataAccessProtocol ;
+                
+                rdfs:comment "What is this?  What does it do?"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#OPeNDAP
+
+:OPeNDAP rdf:type owl:Class ;
+         
+         rdfs:subClassOf :DataServer ,
+                         :Tool ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :canUseAccessProtocol ;
+                           owl:someValuesFrom :DAP
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasInputFormat ;
+                           owl:someValuesFrom :HDF
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasInputFormat ;
+                           owl:someValuesFrom :NetCDF
+                         ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#OSGeo
+
+:OSGeo rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Octave
+
+:Octave rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DesktopEnvironment ,
+                        :Tool ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :canUseDataServer ;
+                          owl:someValuesFrom :OPeNDAP
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Panoply
+
+:Panoply rdf:type owl:Class ;
+         
+         rdfs:subClassOf :DesktopEnvironment ,
+                         :Tool ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsDataType ;
+                           owl:someValuesFrom :Grid
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :Hovmoller
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :Map
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :ScatterPlot
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :TimeSeries
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :supportsVisualizationType ;
+                           owl:someValuesFrom :VerticalProfile
+                         ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Point
+
+:Point rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Vector .
+
+
+
+###  http://toolmatch.esipfed.org/schema#PointColumn
+
+:PointColumn rdf:type owl:Class ;
+             
+             rdfs:subClassOf :InSituData ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasDataDimension ;
+                               owl:someValuesFrom :VerticalPlane
+                             ] ;
+             
+             rdfs:comment "main dimension is Z - e.g., well logs, dropsondes"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#PointTimeSeries
+
+:PointTimeSeries rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :InSituData ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasDataDimension ;
+                                   owl:someValuesFrom :TemporalValue
+                                 ] ;
+                 
+                 rdfs:comment "main dimension is T - e.g., sun photometers"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Polygon
+
+:Polygon rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Vector .
+
+
+
+###  http://toolmatch.esipfed.org/schema#QGIS
+
+:QGIS rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DesktopEnvironment ,
+                      :OSGeo ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Grid
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Raster
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Vector
+                      ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#R
+
+:R rdf:type owl:Class ;
+   
+   rdfs:subClassOf :DesktopEnvironment ,
+                   :Tool ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsDataType ;
+                     owl:someValuesFrom :Grid
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsDataType ;
+                     owl:someValuesFrom :Raster
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsVisualizationType ;
+                     owl:someValuesFrom :Histogram
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsVisualizationType ;
+                     owl:someValuesFrom :Map
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsVisualizationType ;
+                     owl:someValuesFrom :ScatterPlot
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :supportsVisualizationType ;
+                     owl:someValuesFrom :TimeSeries
+                   ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Raster
+
+:Raster rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataStructure .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ReST
+
+:ReST rdf:type owl:Class ;
+      
+      rdfs:subClassOf :HTTP .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ReformatData
+
+:ReformatData rdf:type owl:Class ;
+              
+              rdfs:subClassOf :ServerCapability .
+
+
+
+###  http://toolmatch.esipfed.org/schema#RegularGrid
+
+:RegularGrid rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Grid ;
+             
+             rdfs:comment "Includes level 3 data, and level 4 model output"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SLAMM
+
+:SLAMM rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Tool ,
+                       :WebBasedEnvironment .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SOS
+
+:SOS rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataService .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SPSS
+
+:SPSS rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ScatterPlot
+
+:ScatterPlot rdf:type owl:Class ;
+             
+             rdfs:subClassOf :VisualizationType ;
+             
+             rdfs:label "Scatter Plot"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ServerCapability
+
+:ServerCapability rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Capability .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SpatialCoverage
+
+:SpatialCoverage rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Stitch
+
+:Stitch rdf:type owl:Class ;
+        
+        rdfs:subClassOf :GeoprocessCapability ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :supportsDataType ;
+                          owl:someValuesFrom :Raster
+                        ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SubsetData
+
+:SubsetData rdf:type owl:Class ;
+            
+            rdfs:subClassOf :ServerCapability ;
+            
+            rdfs:comment "type of NetCDF service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Swath
+
+:Swath rdf:type owl:Class ;
+       
+       rdfs:subClassOf :IrregularGrid ,
+                       [ rdf:type owl:Class ;
+                         owl:unionOf ( :Horizontal
+                                       :Vertical
+                                     )
+                       ] ;
+       
+       rdfs:comment "Level 1 and Level 2 data"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TDS
+
+:TDS rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataServer ,
+                     :Tool ;
+     
+     rdfs:comment "Thredds Data Server" .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TemporalCoverage
+
+:TemporalCoverage rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TemporalResolution
+
+:TemporalResolution rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :DataResolution .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TemporalValue
+
+:TemporalValue rdf:type owl:Class ;
+               
+               owl:equivalentClass time:TemporalUnit ;
+               
+               rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TimeSeries
+
+:TimeSeries rdf:type owl:Class ;
+            
+            rdfs:subClassOf :VisualizationType ;
+            
+            rdfs:label "Time Series"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Tool
+
+:Tool rdf:type owl:Class ;
+      
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :canUseAccessProtocol ;
+                        owl:someValuesFrom :DataAccessProtocol
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCapability ;
+                        owl:someValuesFrom :VisualizationType
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :DataStructure
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsVisualizationType ;
+                        owl:someValuesFrom :VisualizationType
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :AccessURL ;
+                        owl:someValuesFrom xsd:anyURI
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :VersionNumber ;
+                        owl:someValuesFrom xsd:float
+                      ] ;
+      
+      dc:description "A ToolMatch Tool is a computer-based utility that can be used for data access, manipulation, and visualization."@en ;
+      
+      rdfs:label "Tool"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ToolEnvironment
+
+:ToolEnvironment rdf:type owl:Class ;
+                 
+                 dc:description "The method in which a tool can be used, such as as a desktop application, browser application, web service, etc."@en ;
+                 
+                 rdfs:label "Tool Environment"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#URL
+
+:URL rdf:type owl:Class .
+
+
+
+###  http://toolmatch.esipfed.org/schema#UniformRegularGrid
+
+:UniformRegularGrid rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :RegularGrid ;
+                    
+                    rdfs:comment "should have a well known projection (from Panoply documentation)"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VISAN
+
+:VISAN rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DesktopEnvironment ,
+                       :Tool ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsDataType ;
+                         owl:someValuesFrom :Grid
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :AnimatedMap
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :Histogram
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :Map
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :TimeSeries
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :supportsVisualizationType ;
+                         owl:someValuesFrom :VerticalProfile
+                       ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Vector
+
+:Vector rdf:type owl:Class ;
+        
+        rdfs:subClassOf :DataStructure .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Vertical
+
+:Vertical rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DataOrientation .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VerticalPlane
+
+:VerticalPlane rdf:type owl:Class ;
+               
+               rdfs:subClassOf :DataDimension .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VerticalProfile
+
+:VerticalProfile rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :VisualizationType ;
+                 
+                 rdfs:label "Vertical Profile"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VisualizationType
+
+:VisualizationType rdf:type owl:Class ;
+                   
+                   rdfs:comment "htmlTable, from visualization options on DataCollection /Tools"@en ;
+                   
+                   rdfs:label "Visualization Type"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#VisualizeData
+
+:VisualizeData rdf:type owl:Class ;
+               
+               rdfs:subClassOf :ServerCapability .
+
+
+
+###  http://toolmatch.esipfed.org/schema#WCS
+
+:WCS rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataService ;
+     
+     rdfs:comment "Web Catalogue Service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#WFS
+
+:WFS rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataService ;
+     
+     rdfs:label "Web Feature Service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#WMS
+
+:WMS rdf:type owl:Class ;
+     
+     rdfs:subClassOf :DataService ;
+     
+     rdfs:comment "Web Map Service"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#WebBasedEnvironment
+
+:WebBasedEnvironment rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf :ToolEnvironment ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isAccessedBy ;
+                                       owl:someValuesFrom :WebBrowser
+                                     ] ;
+                     
+                     rdfs:comment "runs in browser"@en ;
+                     
+                     rdfs:label "Web-based environment"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#WebBrowser
+
+:WebBrowser rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Tool ;
+            
+            rdfs:label "Web Browser"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#gvSIG
+
+:gvSIG rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DesktopEnvironment ,
+                       :OSGeo .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ncBrowse
+
+:ncBrowse rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ncdump
+
+:ncdump rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ncview
+
+:ncview rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#pydap
+
+:pydap rdf:type owl:Class ;
+       
+       rdfs:subClassOf :DataServer ,
+                       :Tool .
+
+
+
+###  http://toolmatch.esipfed.org/schema#uDig
+
+:uDig rdf:type owl:Class ;
+      
+      rdfs:subClassOf :DesktopEnvironment ,
+                      :Tool ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Raster
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsDataType ;
+                        owl:someValuesFrom :Vector
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :supportsVisualizationType ;
+                        owl:someValuesFrom :Map
+                      ] .
+
+
+
+###  http://toolmatch.esipfed.org/schema#2D
+
+:2D rdf:type owl:Class ;
+    
+    rdfs:subClassOf :DataDimension ,
+                    [ owl:intersectionOf ( :Latitude
+                                           :Longitude
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ;
+    
+    rdfs:comment "2 dimensional data"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#2DGrid
+
+:2DGrid rdf:type owl:Class ;
+        
+        rdfs:subClassOf :RegularGrid ;
+        
+        rdfs:comment """(X, Y);  i.e. time snapshot, time average, climatology
+(Y, Z);  i.e. zonal mean vs. depth"""@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#3D
+
+:3D rdf:type owl:Class ;
+    
+    rdfs:subClassOf :DataDimension ,
+                    [ owl:intersectionOf ( :Latitude
+                                           :Longitude
+                                           :VerticalPlane
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ;
+    
+    rdfs:comment "3 dimensional data"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#3DGrid
+
+:3DGrid rdf:type owl:Class ;
+        
+        rdfs:subClassOf :RegularGrid ;
+        
+        rdfs:comment "X, Y, Z"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#4D
+
+:4D rdf:type owl:Class ;
+    
+    rdfs:subClassOf :DataDimension ,
+                    [ owl:intersectionOf ( :Latitude
+                                           :Longitude
+                                           :TemporalValue
+                                           :VerticalPlane
+                                         ) ;
+                      rdf:type owl:Class
+                    ] ;
+    
+    rdfs:comment "4 dimensional data"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#4DGrid
+
+:4DGrid rdf:type owl:Class ;
+        
+        rdfs:subClassOf :RegularGrid ;
+        
+        rdfs:comment "X, Y, Z, T"@en .
+
+
+
+###  http://www.w3.org/2006/time#TemporalUnit
+
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://dx.doi.org/10.5067/dlvu8vopkn7l
+
+<http://dx.doi.org/10.5067/dlvu8vopkn7l> rdf:type owl:NamedIndividual ,
+                                                  :DOI .
+
+
+
+###  http://dx.doi.org/10.5067/aqua/airs/data202
+
+<http://dx.doi.org/10.5067/aqua/airs/data202> rdf:type owl:NamedIndividual ,
+                                                       :DOI .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ASCII
+
+:ASCII rdf:type owl:NamedIndividual ,
+                :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only
+
+:Aqua_AIRS_Level_2_Standard_Physical_Retrieval_AIRS_only rdf:type owl:NamedIndividual ,
+                                                                  :DataCollection ;
+                                                         
+                                                         :hasDIF :GES_DISC_AIRS2RET_V006 ;
+                                                         
+                                                         :hasDataConvention :ClimateForecast ,
+                                                                            :HDF-EOS2 ;
+                                                         
+                                                         :hasIdentifier <http://dx.doi.org/10.5067/aqua/airs/data202> ;
+                                                         
+                                                         :AccessURL "http://disc.sci.gsfc.nasa.gov/datacollection/AIRS2RET_V006.html"^^xsd:anyURI ;
+                                                         
+                                                         rdfs:label "Aqua AIRS Level 2 Standard Physical Retrieval AIRS only"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#BUFR
+
+:BUFR rdf:type owl:NamedIndividual ,
+               :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Binary
+
+:Binary rdf:type owl:NamedIndividual ,
+                 :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CINRAD
+
+:CINRAD rdf:type owl:NamedIndividual ,
+                 :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CMOR
+
+:CMOR rdf:type owl:NamedIndividual ,
+               :DataConvention .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CSV
+
+:CSV rdf:type owl:NamedIndividual ,
+              :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CSV0
+
+:CSV0 rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CSVP
+
+:CSVP rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ClimateForecast
+
+:ClimateForecast rdf:type owl:NamedIndividual ,
+                          :DataConvention .
+
+
+
+###  http://toolmatch.esipfed.org/schema#CoastWatch
+
+:CoastWatch rdf:type owl:NamedIndividual ,
+                     :LiveActionServer ;
+            
+            rdfs:label "NOAA CoastWatch"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DMSP
+
+:DMSP rdf:type owl:NamedIndividual ,
+               :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#DORADE
+
+:DORADE rdf:type owl:NamedIndividual ,
+                 :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#F-TDS
+
+:F-TDS rdf:type owl:NamedIndividual ,
+                :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#FYSAT
+
+:FYSAT rdf:type owl:NamedIndividual ,
+                :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GES_DISC_AIRS2RET_V006
+
+:GES_DISC_AIRS2RET_V006 rdf:type owl:NamedIndividual ,
+                                 :GCMDDIFEntryID .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GES_DISC_GLDAS_MOS10SUBP_3H_V001
+
+:GES_DISC_GLDAS_MOS10SUBP_3H_V001 rdf:type owl:NamedIndividual ,
+                                           :GCMDDIFEntryID .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GES_DISC_OMSO2_V003
+
+:GES_DISC_OMSO2_V003 rdf:type owl:NamedIndividual ,
+                              :GCMDDIFEntryID .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GINI
+
+:GINI rdf:type owl:NamedIndividual ,
+               :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GRIB-1
+
+:GRIB-1 rdf:type owl:NamedIndividual ,
+                 :GRIB .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GRIB-2
+
+:GRIB-2 rdf:type owl:NamedIndividual ,
+                 :GRIB .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GTOPO
+
+:GTOPO rdf:type owl:NamedIndividual ,
+                :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Gemapak_Grid
+
+:Gemapak_Grid rdf:type owl:NamedIndividual ,
+                       :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Gempack_Surface
+
+:Gempack_Surface rdf:type owl:NamedIndividual ,
+                          :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GeoJSON
+
+:GeoJSON rdf:type owl:NamedIndividual ,
+                  :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GeoTIFF
+
+:GeoTIFF rdf:type owl:NamedIndividual ,
+                  :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDF-EOS2
+
+:HDF-EOS2 rdf:type owl:NamedIndividual ,
+                   :DataConvention .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDF-EOS5
+
+:HDF-EOS5 rdf:type owl:NamedIndividual ,
+                   :DataConvention .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDF4
+
+:HDF4 rdf:type owl:NamedIndividual ,
+               :CDM_File_Type ,
+               :HDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#HDF5
+
+:HDF5 rdf:type owl:NamedIndividual ,
+               :CDM_File_Type ,
+               :HDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#JSON
+
+:JSON rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#KML
+
+:KML rdf:type owl:NamedIndividual ,
+              :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#McIDASArea
+
+:McIDASArea rdf:type owl:NamedIndividual ,
+                     :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#McIDASGrid
+
+:McIDASGrid rdf:type owl:NamedIndividual ,
+                     :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NCML
+
+:NCML rdf:type owl:NamedIndividual ,
+               :NetCDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NEXRAD-2
+
+:NEXRAD-2 rdf:type owl:NamedIndividual ,
+                   :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NEXRAD-3
+
+:NEXRAD-3 rdf:type owl:NamedIndividual ,
+                   :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NLDN
+
+:NLDN rdf:type owl:NamedIndividual ,
+               :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NMCon29
+
+:NMCon29 rdf:type owl:NamedIndividual ,
+                  :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF3
+
+:NetCDF3 rdf:type owl:NamedIndividual ,
+                  :NetCDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF4
+
+:NetCDF4 rdf:type owl:NamedIndividual ,
+                  :CDM_File_Type ,
+                  :NetCDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF4Classic
+
+:NetCDF4Classic rdf:type owl:NamedIndividual ,
+                         :NetCDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#NetCDF4Enhanced
+
+:NetCDF4Enhanced rdf:type owl:NamedIndividual ,
+                          :NetCDF .
+
+
+
+###  http://toolmatch.esipfed.org/schema#ODVText
+
+:ODVText rdf:type owl:NamedIndividual ,
+                  :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#SIGMET
+
+:SIGMET rdf:type owl:NamedIndividual ,
+                 :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Shapefile
+
+:Shapefile rdf:type owl:NamedIndividual ,
+                    :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TSV
+
+:TSV rdf:type owl:NamedIndividual ,
+              :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TSV0
+
+:TSV0 rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#TSVP
+
+:TSVP rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Text
+
+:Text rdf:type owl:NamedIndividual ,
+               :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#UAMIV
+
+:UAMIV rdf:type owl:NamedIndividual ,
+                :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#UF_GEOIDE_LAS
+
+:UF_GEOIDE_LAS rdf:type owl:NamedIndividual ,
+                        :Ferret ;
+               
+               rdfs:label "UF GEOIDE LAS"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#USPLM
+
+:USPLM rdf:type owl:NamedIndividual ,
+                :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#Universal_Radar_Format
+
+:Universal_Radar_Format rdf:type owl:NamedIndividual ,
+                                 :CDM_File_Type .
+
+
+
+###  http://toolmatch.esipfed.org/schema#XML
+
+:XML rdf:type owl:NamedIndividual ,
+              :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#esriASCII
+
+:esriASCII rdf:type owl:NamedIndividual ,
+                    :DataFormat .
+
+
+
+###  http://toolmatch.esipfed.org/schema#GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC
+
+:GLDAS_Mosaic_Land_Surface_Model_L4_3_Hourly_1.0_x_1.0_degree_Subsetted_V001_(GLDAS_MOS10SUBP_3H)_at_GES_DISC rdf:type owl:NamedIndividual ,
+                                                                                                                       :DataCollection ;
+                                                                                                              
+                                                                                                              :hasDIF :GES_DISC_GLDAS_MOS10SUBP_3H_V001 ;
+                                                                                                              
+                                                                                                              :hasDataFormat :ASCII ,
+                                                                                                                             :NetCDF4 ;
+                                                                                                              
+                                                                                                              :hasIdentifier <http://dx.doi.org/10.5067/dlvu8vopkn7l> ;
+                                                                                                              
+                                                                                                              :AccessURL "ftp://hydro1.sci.gsfc.nasa.gov/data/s4pa/GLDAS_V1/GLDAS_MOS10SUBP_3H/"^^xsd:anyURI ;
+                                                                                                              
+                                                                                                              rdfs:label "GLDAS Mosaic Land Surface Model L4 3 Hourly 1.0 x 1.0 degree Subsetted V001 (GLDAS_MOS10SUBP_3H) at GES DISC"@en .
+
+
+
+###  http://toolmatch.esipfed.org/schema#OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)
+
+:OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2)OMI/Aura_Sulphur_Dioxide_(SO2)_Total_Column_1-orbit_L2_Swath_13x24_km_V003_(OMSO2) rdf:type owl:NamedIndividual ,
+                                                                                                                                                                               :DataCollection ;
+                                                                                                                                                                      
+                                                                                                                                                                      :hasDIF :GES_DISC_OMSO2_V003 ;
+                                                                                                                                                                      
+                                                                                                                                                                      :hasDataFormat :ClimateForecast ,
+                                                                                                                                                                                     :HDF-EOS5 ;
+                                                                                                                                                                      
+                                                                                                                                                                      :AccessURL "http://disc.gsfc.nasa.gov/datacollection/OMSO2_V003.html"^^xsd:anyURI ;
+                                                                                                                                                                      
+                                                                                                                                                                      rdfs:label "OMI/Aura Sulphur Dioxide (SO2) Total Column 1-orbit L2 Swath 13x24 km V003 (OMSO2)"@en .
+
+
+
+[ foaf:name "Chris Lynnes"@en
+] .
+
+
+#################################################################
+#
+#    Annotations
+#
+#################################################################
+
+
+:AccessURL dc:description "A data collection can be accessed via a particular URL."@en ;
+           
+           rdfs:label "Has Access URL"@en .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ArcGIS
+                :ArcGISDesktop
+                :BEAT
+                :CDAT
+                :DChart
+                :ERDDAP
+                :Ferret
+                :GE_Smallworld
+                :GRASS_GIS
+                :GeoDa
+                :Giovanni
+                :GoogleEarth
+                :GrADS
+                :HDFView
+                :HEG
+                :HYDRA2
+                :Hyrax
+                :IDV
+                :LiveActionServer
+                :MINX
+                :MISR_Toolkit
+                :MISR_VIEW
+                :Manifold
+                :Matlab
+                :McIDAS-V
+                :NCL
+                :NCO
+                :OPeNDAP
+                :OSGeo
+                :Octave
+                :Panoply
+                :QGIS
+                :R
+                :SLAMM
+                :SPSS
+                :TDS
+                :VISAN
+                :WebBrowser
+                :gvSIG
+                :ncBrowse
+                :ncdump
+                :ncview
+                :pydap
+                :uDig
+              )
+] .
+
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Grid
+                :Raster
+                :Vector
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+
