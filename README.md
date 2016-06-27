@@ -1,6 +1,6 @@
 ToolMatch Ontology Repository
 =========
-<a href="https://gitter.im/ESIPFed/toolmatch-ontology">![](https://gitter.im/ESIPFed/toolmatch-ontology?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link)</a>
+<a href="https://gitter.im/">![](http://gitter.im/ESIPFed/toolmatch-ontology?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link)</a>
 
 <a href="http://esipfed.org">![](http://badge.esipfed.org/funded.svg?style=plastic&display=logo)</a>
 
