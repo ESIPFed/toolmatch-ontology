@@ -367,6 +367,9 @@ Date: 2015-11-26</Literal>
         <Class IRI="#SpatialCoverage"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SLAMM"/>
     </Declaration>
     <Declaration>
@@ -716,9 +719,6 @@ Date: 2015-11-26</Literal>
     </Declaration>
     <Declaration>
         <Class IRI="#OPeNDAP"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="time:TemporalUnit"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#TemporalValue"/>
@@ -2960,7 +2960,7 @@ Date: 2015-11-26</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#VisualizationType</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">htmlTable, from visualization options on DataCollection /Tools</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A visualization option supported by a tool.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
