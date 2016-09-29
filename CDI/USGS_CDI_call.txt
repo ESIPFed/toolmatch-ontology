@@ -1,0 +1,98 @@
+cover page now generated on RFP
+
+travel budget for FY17...something...annual workshop(?) - CDI sponsored event
+
+CDI
+-advance understanding of earth sxystems through enhanced use of data and information
+-forum
+-visibility
+
+
+2 phase request for proposals
+
+1st phase 
+2 page max
+relate to science support framework, guiding principles and evaluation criteria
+voting by CDI community members
+~to 20 invited to submit full proposals
+
+2nd phase
+tons of stuff...
+
+full proposals go to review pannel
+
+USGS employee must be PI, but collaboration is encouraged
+projects completed in 3-6 mo
+mid project and end of project reporting
+
+all projects required to be completed by end of sept...regardless of when funding is enabled (sometimes not until June)
+
+include travel money for one person to attend CDI sponsored event
+
+all products or results should be made publicly available
+
+publish as soon after the project as possible
+
+software products should be available openly (e.g. usgs bitbucket repo)
+	-hmmm
+	
+$50k max.  
+	-for salary, travel and other expenses
+	-NOT field work, or fed employee salary
+	-proposal must have 30% marching funds from Salary, travel or other grants, etc.
+		-can be creative with how this works
+
+mist relate to three aspects of RPF SSF
+	-(check PDF...they are whipping through this)
+	-ontologies specifically mentioned  (see page 11)
+	
+which of the elements would our project relate to (see page 12 and appendices)?
+
+leverage existing capabilities and data
+	-how can we do more with the data we already have?
+	-(Dalia Vranka is a USGS employee...)
+	
+they are looking for collaboration -- i.e. NASA ++ All the DAACs ?
+	see evaluation criteria
+
+some examples from previous
+	-geo data portal
+	-NLCD evaluation, visualization and analysis (EVA) tool
+	-NWIS snapshot tool (for arcgis)
+	-extraction of mine features (automate digitisation of mine features from topo maps)
+	-characterizing earth quake damage (from soc media reports--twitter)
+	-damn removal db -- damn removal info portal--I.E> DRIP
+	-science cache (geocaching mobile application framework) uses game based technique
+	-more info...see ppt on CDI wiki...
+	-see https://my.usgs.gov/confluence/pages/viewpage.action?pageId=555651966
+
+see also: https://my.usgs.gov/confluence/display/cdi/FY17+RFP+Collaboration+Forum
+	
+full details of callab can be in infancy; full details aren't needed until the full proposal is requested.
+
+There's something about what is appropriate-and CEGIS was mentioned...find out what that means...perhaps Dalia isn't a viable option.
+
+different funding opportunities: https://my.usgs.gov/confluence/x/ZwL1I
+
+RPM manager: my.usgs.gov/CDI_RFP  or https://my.usgs.gov/CDI_RFP/event/show/5248
+
+encourage the USGS employee to enroll and register and submit...(stressed encouraged)
+	-must include ORCID :)
+
+USGS staff required to have ORCID
+
+due friday...easter time...5pm
+
+tips
+-potential for partnerships and reusability is important
+-complete ALL fields
+-budget...follow guidelines and DOUBLE CHECK!!
+-FAQ page.  read it.  https://my.usgs.gov/confluence/x/WZMeIQ
+-next year's workshop likely in Denver or Reston (not sure yet -- for budgeting purposes)
+
+SOI voting process:
+-must be CDI member to vote
+-read all before voting
+-community can comment on SOIs--important for PIs to respond
+
+close of voting is Nov 9.
