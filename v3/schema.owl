@@ -7,7 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://toolmatch.esipfed.org/schema"
      versionIRI="http://toolmatch.esipfed.org/schema/2.0">
-    <Prefix name="" IRI="http://toolmatch.esipfed.org/schema"/>
+    <Prefix name="" IRI="http://toolmatch.esipfed.org/schema#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="ns" IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#"/>
     <Prefix name="tw" IRI="http://tw.rpi.edu/schema/"/>
@@ -2246,6 +2246,10 @@ Date: 2015-11-26</Literal>
         <Class IRI="#Grid"/>
         <Class IRI="#Raster"/>
         <Class IRI="#Vector"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IrregularGrid"/>
+        <Class IRI="#RegularGrid"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Latitude"/>
